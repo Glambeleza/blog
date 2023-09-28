@@ -1,7 +1,9 @@
+import styles from "./styles.module.css";
+
 export default function FooterLayout() {
   return (
-    <footer style={{ width: "100%" }}>
-      <h1>Footer</h1>
+    <footer className={styles.footer}>
+      <p>Copyright © {new Date().getFullYear()} Glambeleza.</p>
     </footer>
   );
 }
