@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-width: var(--max-width);
+  padding: 20px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 20px 0;
+  color: var(--color-secondary);
+}
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.containerInfoForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.titleInfo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.listInfo {
+  list-style: none;
+  padding: 0;
+}
+.itemInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+.itemInfo:hover {
+  color: var(--color-hover);
+}
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: 0px none transparent;
+}
+.form input:hover {
+  border-color: var(--color-hover);
+}
+
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  outline: 0px none transparent;
+}
+.form textarea:hover {
+  border-color: var(--color-hover);
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form button:hover {
+  background-color: var(--color-hover);
+}
