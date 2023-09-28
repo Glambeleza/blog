@@ -48,3 +48,32 @@
 .itemSocial:hover {
   color: var(--color-hover);
 }
+
+.menuMobile {
+  display: none;
+}
+
+@media (max-width: 740px) {
+  .containerHeader {
+    width: 80%;
+    padding: 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+  .menuMobile {
+    display: block;
+    font-size: 24px;
+  }
+
+  .nav {
+    display: none;
+  }
+  .list {
+    display: none;
+  }
+  .listSocial {
+    display: none;
+  }
+}
