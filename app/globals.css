@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 
 :root {
-  --max-width: 1100px;
+  --max-width: 1250px;
   --max-width-header: 980px;
   --max-width-header-mobile: 600px;
   --max-width-footer: 1100px;

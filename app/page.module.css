@@ -33,7 +33,7 @@
 }
 
 .item {
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .contImg img {
@@ -44,7 +44,8 @@
   transition: transform 0.3s;
 }
 .firstContImg img {
-  width: 440px;
+  width: 100%;
+  min-width: 500px;
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
@@ -80,7 +81,7 @@
 }
 
 .firstTitlePost {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
   padding: 4px 4px 4px 0;
