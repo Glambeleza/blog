@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "@types/node": "latest",
