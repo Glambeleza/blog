@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
   height: 80px;
   max-width: var(--max-width-header);
   margin: 0 auto;
+  margin-top: 30px;
+  max-width: 680px;
 }
 
 .list {
@@ -17,10 +18,11 @@
 }
 
 .item {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   padding: 0 30px;
   font-family: var(--font-title);
+  letter-spacing: 0.5px;
 }
 
 .item:hover {
@@ -39,7 +41,7 @@
 
 .itemSocial {
   margin-left: 10px;
-  font-size: 24px;
+  font-size: 18px;
   padding: 0 20px;
 }
 

@@ -1,27 +1,37 @@
 "use client";
 import styles from "./page.module.css";
 import Link from "next/link";
-import img1 from "../public/1.jpg";
-import img2 from "../public/2.jpg";
-import img3 from "../public/3.jpg";
-import img4 from "../public/4.jpg";
-import img5 from "../public/5.jpg";
-import img6 from "../public/6.jpg";
-import img7 from "../public/7.jpg";
-import img8 from "../public/8.jpg";
-import img9 from "../public/9.jpg";
-import img10 from "../public/10.jpg";
-import img11 from "../public/11.jpg";
+import img1 from "../public/13.jpg";
+import img2 from "../public/12.jpg";
+import img3 from "../public/16.jpg";
+import img4 from "../public/13.jpg";
+import img5 from "../public/12.jpg";
+import img6 from "../public/16.jpg";
+import img7 from "../public/13.jpg";
+import img8 from "../public/12.jpg";
+import img9 from "../public/16.jpg";
+import img10 from "../public/13.jpg";
+import img11 from "../public/12.jpg";
 import img12 from "../public/12.jpg";
-import img13 from "../public/13.jpg";
-import img14 from "../public/14.jpg";
-import img15 from "../public/15.jpg";
-import img16 from "../public/16.jpg";
+import img13 from "../public/16.jpg";
+import img14 from "../public/16.jpg";
+import img15 from "../public/13.jpg";
+import img16 from "../public/12.jpg";
 import Image from "next/image";
 import moment from "moment";
 import "moment/locale/pt-br";
 
+export interface AutorProps {
+  name: string;
+  avatar: string;
+}
+
 export default function Home() {
+  const autor: AutorProps = {
+    name: "Ieda Helen",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ic3qZGR2oA96imNITrFcgLkb3H-747rbDg3Q_BzUdOxoOT2C-YHct0SObLpa3wA4vyc",
+  };
   const dados: Array<{
     id: string;
     title: string;
@@ -34,7 +44,8 @@ export default function Home() {
   }> = [
     {
       id: "uuid_1",
-      title: "Título 1: Beleza e Bem-Estar",
+      title:
+        "Architectural Engineering Wonders of the modern era for your Inspiration",
       slug: "post-1-beleza-e-bem-estar",
       img: img1,
       tag: "beleza",
@@ -44,7 +55,8 @@ export default function Home() {
     },
     {
       id: "uuid_2",
-      title: "Título 2: Beleza e Bem-Estar",
+      title:
+        "Architectural Engineering Wonders of the modern era for your Inspiration",
       slug: "post-2-beleza-e-bem-estar",
       img: img2,
       tag: "beleza saúde",
@@ -54,7 +66,7 @@ export default function Home() {
     },
     {
       id: "uuid_3",
-      title: "Título 3: Beleza e Bem-Estar",
+      title: "Every Next Level of Your Life Will Demand a Different You",
       slug: "post-3-beleza-e-bem-estar",
       img: img3,
       tag: "bem-estar",
@@ -64,7 +76,7 @@ export default function Home() {
     },
     {
       id: "uuid_4",
-      title: "Título 4: Beleza e Bem-Estar",
+      title: "Every Next Level of Your Life Will Demand a Different You",
       slug: "post-4-beleza-e-bem-estar",
       img: img4,
       tag: "beleza",
@@ -74,7 +86,7 @@ export default function Home() {
     },
     {
       id: "uuid_5",
-      title: "Título 5: Beleza e Bem-Estar",
+      title: "Every Next Level of Your Life Will Demand a Different You",
       slug: "post-5-beleza-e-bem-estar",
       img: img5,
       tag: "saúde",
@@ -221,7 +233,7 @@ export default function Home() {
                 <div className={styles.info}>
                   <p className={styles.tag}>{post.tag?.toUpperCase()}</p>
                   <h2
-                    className={styles.firstTitlePost}
+                    className={styles.titlePost}
                     id="highlightable"
                     onMouseEnter={(e) => {
                       highlightText(e.currentTarget, "#f3ebea");
@@ -232,9 +244,18 @@ export default function Home() {
                   >
                     {post.title}
                   </h2>
-                  <p className={styles.date}>
-                    {moment(post.date).format("LL")}
-                  </p>
+                  <div className={styles.autorDate}>
+                    <div className={styles.autor}>
+                      <div className={styles.avatar}>
+                        {/* <Image src={autor.avatar} alt="" width={50} height={50} /> */}
+                        <img src={autor.avatar} alt="" />
+                      </div>
+                      <div className={styles.nome}>{autor.name}</div>
+                    </div>
+                    <p className={styles.date}>
+                      {moment(post.date).format("LL")}
+                    </p>
+                  </div>
                 </div>
               </Link>
             </nav>
@@ -268,9 +289,18 @@ export default function Home() {
                   >
                     {post.title}
                   </h2>
-                  <p className={styles.date}>
-                    {moment(post.date).format("LL")}
-                  </p>
+                  <div className={styles.autorDate}>
+                    <div className={styles.autor}>
+                      <div className={styles.avatar}>
+                        {/* <Image src={autor.avatar} alt="" width={50} height={50} /> */}
+                        <img src={autor.avatar} alt="" />
+                      </div>
+                      <div className={styles.nome}>{autor.name}</div>
+                    </div>
+                    <p className={styles.date}>
+                      {moment(post.date).format("LL")}
+                    </p>
+                  </div>
                 </div>
               </Link>
             </nav>

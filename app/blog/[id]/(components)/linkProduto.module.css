@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.list li {
+  padding: 1rem;
+}
+
+.logoPlataform {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.btnComprar {
+  cursor: pointer;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #068d01;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btnComprar:hover {
+  background: #0baf06;
+  color: #ffffff;
+}

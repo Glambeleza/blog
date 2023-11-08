@@ -7,6 +7,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { Form } from "./(components)/form";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contato",
@@ -23,16 +24,24 @@ export default function ContatoPage() {
           <nav>
             <ul className={styles.listInfo}>
               <li className={styles.itemInfo}>
-                <BiLogoInstagramAlt /> instagram.com/glambeleza
+                <Link href={"https://instagram.com"} target="_blank">
+                  <BiLogoInstagramAlt /> <span>instagram.com/glambeleza</span>
+                </Link>
               </li>
               <li className={styles.itemInfo}>
-                <BiLogoTiktok /> tiktok.com/glambeleza
+                <Link href={"https://tiktok.com"} target="_blank">
+                  <BiLogoTiktok /> <span>tiktok.com/glambeleza</span>
+                </Link>
               </li>
               <li className={styles.itemInfo}>
-                <BiLogoYoutube /> youtube.com/glambeleza
+                <Link href={"https://youtube.com"} target="_blank">
+                  <BiLogoYoutube /> <span>youtube.com/glambeleza</span>
+                </Link>
               </li>
               <li className={styles.itemInfo}>
-                <BiLogoGmail /> contato@glambeleza.com.br
+                <Link href={"https://instagram.com"} target="_blank">
+                  <BiLogoGmail /> <span>contato@glambeleza.com.br</span>
+                </Link>
               </li>
             </ul>
           </nav>

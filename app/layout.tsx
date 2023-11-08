@@ -76,17 +76,17 @@ export default function RootLayout({
           <nav className={styles.nav}>
             <ul className={styles.listSocial}>
               <li className={styles.itemSocial}>
-                <Link href={"https://www.instagram.com"}>
+                <Link href={"https://www.instagram.com"} target="_blank">
                   <FaInstagram />
                 </Link>
               </li>
               <li className={styles.itemSocial}>
-                <Link href={"http://www.tiktok.com"}>
+                <Link href={"http://www.tiktok.com"} target="_blank">
                   <FaTiktok />
                 </Link>
               </li>
               <li className={styles.itemSocial}>
-                <Link href={"https://www.youtube.com"}>
+                <Link href={"https://www.youtube.com"} target="_blank">
                   <FaYoutube />
                 </Link>
               </li>
