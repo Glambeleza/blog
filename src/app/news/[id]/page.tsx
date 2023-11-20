@@ -6,9 +6,9 @@ import "moment/locale/pt-br";
 import Image from "next/image";
 import img from "/public/13.jpg";
 import Link from "next/link";
-import { AffiliateLink } from "./(components)/linkProduto";
+import { AffiliateLink } from "./components/linkProduto";
 import { BiArrowBack } from "react-icons/bi";
-import type { AffiliateLinkProps } from "./(components)/linkProduto";
+import type { AffiliateLinkProps } from "./components/linkProduto";
 
 export const metadata: Metadata = {
   title: "Blog Glambeleza",

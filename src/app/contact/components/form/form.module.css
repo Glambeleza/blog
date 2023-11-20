@@ -32,7 +32,7 @@
   border-color: var(--color-hover);
 }
 
-.form button {
+.button {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -44,16 +44,14 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   margin-top: 10px;
-}
 
-.form button:hover {
-  background-color: var(--color-hover);
-}
-
-.button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button:hover {
+  background-color: var(--color-hover);
 }
 
 .button * {
@@ -62,6 +60,21 @@
 
 .spiner {
   animation: rotateAnimation 1s linear infinite;
+}
+
+.textEmail {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  line-height: 1.5rem;
+  letter-spacing: 0.8px;
+  max-width: 540px;
+}
+
+.email {
+  color: var(--color-tertiary);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 @keyframes rotateAnimation {

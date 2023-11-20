@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./linkProduto.module.css";
+import styles from "./index.module.css";
 import { IoLogoAmazon } from "react-icons/io5";
 import { SiShopee } from "react-icons/si";
 import { AiOutlineShop } from "react-icons/ai";

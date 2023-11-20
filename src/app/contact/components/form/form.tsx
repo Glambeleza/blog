@@ -2,9 +2,10 @@
 import { useState } from "react";
 import styles from "./form.module.css";
 import { RiMailSendLine } from "react-icons/ri";
-import { PiSpinnerGapBold } from "react-icons/pi";
 import { CgSpinnerTwo } from "react-icons/cg";
 import Swal from "sweetalert2";
+import { BiLogoGmail } from "react-icons/bi";
+import Link from "next/link";
 
 export function Form() {
   const [loading, setLoading] = useState(false);
@@ -43,25 +44,35 @@ export function Form() {
   };
 
   return (
-    <form
-      action=""
-      className={styles.form}
-      method="post"
-      onSubmit={handleSubmit}
-    >
-      <input type="text" name="nome" placeholder="Digite seu nome 😁" />
+    <>
+      <form
+        action=""
+        className={styles.form}
+        method="post"
+        onSubmit={handleSubmit}
+      >
+        <input type="text" name="nome" placeholder="Digite seu nome 😁" />
 
-      <input type="email" name="email" placeholder="Digite o seu email 📧" />
+        <input type="email" name="email" placeholder="Digite o seu email 📧" />
 
-      <textarea name="mensagem" placeholder="Digite uma mensagem 💌" rows={6} />
-      <button type="submit" className={styles.button} disabled={loading}>
-        Enviar{" "}
-        {loading ? (
-          <CgSpinnerTwo className={styles.spiner} />
-        ) : (
-          <RiMailSendLine />
-        )}
-      </button>
-    </form>
+        <textarea
+          name="mensagem"
+          placeholder="Digite uma mensagem 💌"
+          rows={6}
+        />
+        <button type="submit" className={styles.button} disabled={loading}>
+          Enviar{" "}
+          {loading ? (
+            <CgSpinnerTwo className={styles.spiner} />
+          ) : (
+            <RiMailSendLine />
+          )}
+        </button>
+      </form>
+      <p className={styles.textEmail}>
+        Se preferir envie um email para{" "}
+        <span className={styles.email}>contato@glambeleza.com.br</span>
+      </p>
+    </>
   );
 }

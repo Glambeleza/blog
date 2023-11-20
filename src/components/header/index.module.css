@@ -53,15 +53,6 @@
   display: none;
 }
 
-.footer {
-  background-color: #222;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
 @media (max-width: 740px) {
   .containerHeader {
     width: 80%;
