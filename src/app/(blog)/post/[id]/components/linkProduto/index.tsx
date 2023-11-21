@@ -3,12 +3,9 @@ import styles from "./index.module.css";
 import { IoLogoAmazon } from "react-icons/io5";
 import { SiShopee } from "react-icons/si";
 import { AiOutlineShop } from "react-icons/ai";
-
-export interface AffiliateLinkProps {
-  href: string;
-  irPara: string;
-  plataforma: "amazon" | "shopee" | "site";
-}
+import Image from "next/image";
+import { AffiliateLinkProps } from "../../page";
+import Link from "next/link";
 
 interface AmazonAffiliateLinkProps {
   href: AffiliateLinkProps[];
@@ -25,27 +22,27 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
     <div className={styles.container}>
       {imgSrc && (
         <>
-          <img alt={alt} src={imgSrc} />
+          <Image alt={alt} src={imgSrc} width={300} height={300} />
 
           <nav>
             <ul className={styles.list}>
               {href.map((item) => (
-                <li key={item.irPara}>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                <Link href={item.href} target="_blank" key={item.to}>
+                  <li key={item.to}>
                     <div className={styles.logoPlataform}>
-                      {item.plataforma === "amazon" ? (
+                      {item.platform === "amazon" ? (
                         <IoLogoAmazon />
-                      ) : item.plataforma === "shopee" ? (
+                      ) : item.platform === "shopee" ? (
                         <SiShopee />
                       ) : (
                         <AiOutlineShop />
                       )}
                     </div>
                     <button className={styles.btnComprar}>
-                      Comprar {item.irPara}
+                      Comprar {item.to}
                     </button>
-                  </a>
-                </li>
+                  </li>
+                </Link>
               ))}
             </ul>
           </nav>

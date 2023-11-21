@@ -1,0 +1,71 @@
+{
+  "tag": "Beleza",
+  "title": "Titulo",
+  "date": "2023-11-20T22:46:25-03:00",
+  "author": {
+    "name": "Autor",
+    "avatar": "https://github.com/valdisneinilo.png"
+  },
+
+  "image": {
+    "src": "http://localhost:3000/13.jpg",
+    "alt": "alt"
+  },
+  "summary": "Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight.",
+  "paragraphs": [
+    {
+      "text": "Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight.",
+      "img": {
+        "src": "http://localhost:3000/13.jpg",
+        "alt": "alt"
+      },
+      "linkHref": [
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "na Amazon",
+          "platform": "amazon"
+        },
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "na Shopee",
+          "platform": "shopee"
+        },
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "no site",
+          "platform": "site"
+        }
+      ]
+    },
+    {
+      "text": "Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight. Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight.Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight."
+    },
+    {
+      "text": "Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight. Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight.",
+      "img": {
+        "src": "http://localhost:3000/13.jpg",
+        "alt": "alt"
+      },
+      "linkHref": [
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "na Amazon",
+          "platform": "amazon"
+        },
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "na Shopee",
+          "platform": "shopee"
+        },
+        {
+          "href": "https://www.amazon.com.br/M%C3%A1scara-Tratamento-Pantene-Bambu-600Ml/dp/B088P95YR5?_encoding=UTF8&brr=1&content-id=amzn1.sym.9d5235c0-50b3-4a9a-af53-5c115e367234&pd_rd_r=8ae3d993-61fa-408f-96c4-c0fa96351d53&pd_rd_w=4XGKv&pd_rd_wg=WroO0&pf_rd_p=9d5235c0-50b3-4a9a-af53-5c115e367234&pf_rd_r=8GPQESJ3Y561SMVZZMRQ&qid=1696288651&rd=1&s=beauty&sr=1-12&th=1&linkCode=li3&tag=xane0a-20&linkId=461872f6599e5ee5eb171976399d21b2&language=pt_BR&ref_=as_li_ss_il",
+          "to": "no site",
+          "platform": "site"
+        }
+      ]
+    },
+    {
+      "text": "Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight. Reinvention often comes in spurts, after a long period of silence. Just as modern architecture recently enjoyed a comeback, brand architecture, a field with well-established principles for decades, is back in the limelight."
+    }
+  ]
+}
