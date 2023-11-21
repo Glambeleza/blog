@@ -3,36 +3,28 @@ import styles from "./page.module.css";
 import PrimaryCard from "./components/primaryCard";
 import SecondCard from "./components/secondaryCard";
 import { api } from "@/src/data/api";
+import { PostProps } from "@/src/data/types/posts";
 
-export interface ImgProps {
-  src: string;
-  alt: string;
-}
+async function getPosts(): Promise<PostProps[]> {
+  const teste = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("ok");
+    }, 3000);
+  });
 
-export interface AutorProps {
-  avatar: string;
-  name: string;
-}
-
-export interface PostProps {
-  id: string;
-  title: string;
-  tag: string;
-  date: string;
-  img: ImgProps;
-  author: AutorProps;
-}
-
-async function getPosts() {
-  const response = await api("/posts");
-  const data: PostProps[] = await response.json();
+  const response = await api("/posts", {
+    next: {
+      revalidate: 60 * 60 * 24, // 24 hours
+    },
+  });
+  const data = await response.json();
   return data;
 }
 
 export default async function Home() {
   const data = await getPosts();
   const firstAndSecondeItem = data.filter((_item, index) => index < 2);
-  const restOfItems = data.filter((item, index) => index > 1);
+  const restOfItems = data.filter((_item, index) => index > 1);
 
   return (
     <main className={styles.main}>

@@ -7,47 +7,16 @@ import Link from "next/link";
 import { AffiliateLink } from "./components/linkProduto";
 import { BiArrowBack } from "react-icons/bi";
 import { api } from "@/src/data/api";
+import { BlogProps } from "@/src/data/types/post";
 
 export const metadata: Metadata = {
   title: "Blog Glambeleza",
   description: "Blog Glambeleza",
 };
 
-export interface AuthorProps {
-  name: string;
-  avatar: string;
-}
-
-export interface ImageProps {
-  src: string;
-  alt: string;
-}
-
-export interface AffiliateLinkProps {
-  href: string;
-  to: string;
-  platform: string;
-}
-
-export interface ParagraphProps {
-  text: string;
-  img?: ImageProps;
-  linkHref?: AffiliateLinkProps[];
-}
-
-export interface BlogProps {
-  tag: string;
-  title: string;
-  date: string;
-  author: AuthorProps;
-  image: ImageProps;
-  summary: string;
-  paragraphs: ParagraphProps[];
-}
-
-async function getPost(id: string) {
+async function getPost(id: string): Promise<BlogProps> {
   const response = await api(`/post/${id}`);
-  const data: BlogProps = await response.json();
+  const data = await response.json();
   return data;
 }
 

@@ -1,9 +1,9 @@
 import styles from "./index.module.css";
 import Link from "next/link";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import moment from "moment";
-import type { PostProps } from "../../page";
+import type { PostProps } from "@/src/data/types/posts";
 
 export default function PrimaryCard(post: PostProps) {
   return (
