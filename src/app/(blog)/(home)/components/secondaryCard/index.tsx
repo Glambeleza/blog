@@ -3,40 +3,20 @@ import Link from "next/link";
 
 import Image, { StaticImageData } from "next/image";
 import moment from "moment";
-
-interface ImgProps {
-  src: string | StaticImageData;
-  alt: string;
-  width: number;
-  height: number;
-}
-
-interface AutorProps {
-  avatar: string | StaticImageData;
-  name: string;
-}
-
-interface PostProps {
-  id: string;
-  title: string;
-  slug: string;
-  tag: string;
-  date: string | Date;
-  img: ImgProps;
-  author: AutorProps;
-}
+import { PostProps } from "../../page";
 
 export default function SecondaryCard(post: PostProps) {
   return (
     <li key={post.id} className={styles.item}>
       <nav>
-        <Link href={`/news/${post.slug}`}>
+        <Link href={`/news/${post.id}`}>
           <div className={styles.contImg}>
             <Image
               src={post.img.src}
               alt={post.img.alt}
-              width={post.img.width}
-              height={post.img.height}
+              width={310}
+              height={280}
+              quality={80}
             />
           </div>
           <div className={styles.info}>
@@ -47,12 +27,12 @@ export default function SecondaryCard(post: PostProps) {
             <div className={styles.autorDate}>
               <div className={styles.autor}>
                 <div className={styles.avatar}>
-                  {/* <Image src={autor.avatar} alt="" width={50} height={50} /> */}
                   <Image
                     src={post.author.avatar}
-                    alt=""
+                    alt={post.author.name}
                     width={25}
                     height={25}
+                    quality={100}
                   />
                 </div>
                 <div className={styles.nome}>{post.author.name}</div>
