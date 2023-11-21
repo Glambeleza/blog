@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./primaryCardSkeleton.module.css";
+import styles from "./secondaryCardSkeleton.module.css";
 
-const SkeletonPrimaryCard: React.FC = () => {
+const SkeletonSecondaryCard: React.FC = () => {
   return (
     <div className={styles.skeleton}>
       <div className={styles.img} />
@@ -16,4 +16,4 @@ const SkeletonPrimaryCard: React.FC = () => {
   );
 };
 
-export default SkeletonPrimaryCard;
+export default SkeletonSecondaryCard;

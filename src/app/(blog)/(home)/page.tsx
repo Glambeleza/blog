@@ -6,12 +6,6 @@ import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/posts";
 
 async function getPosts(): Promise<PostProps[]> {
-  const teste = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("ok");
-    }, 3000);
-  });
-
   const response = await api("/posts", {
     next: {
       revalidate: 60 * 60 * 24, // 24 hours

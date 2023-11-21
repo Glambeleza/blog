@@ -5,8 +5,8 @@
 }
 
 .img {
-  width: 472px;
-  height: 265.5px;
+  width: 310px;
+  height: 280px;
   margin-bottom: 16px;
   border-radius: 8px;
   background: linear-gradient(90deg, #ececec 25%, #f0f0f0 50%, #ececec 75%);
@@ -14,8 +14,8 @@
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin-bottom: 16px;
   background: linear-gradient(90deg, #ececec 25%, #f0f0f0 50%, #ececec 75%);
@@ -43,7 +43,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  max-width: 320px;
+  max-width: 280px;
 }
 
 @keyframes pulse {
