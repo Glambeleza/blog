@@ -2,6 +2,7 @@ import "moment/locale/pt-br";
 import styles from "./page.module.css";
 import PrimaryCard from "./components/primaryCard";
 import SecondCard from "./components/secondaryCard";
+import { api } from "@/src/data/api";
 
 export interface ImgProps {
   src: string;
@@ -22,12 +23,15 @@ export interface PostProps {
   author: AutorProps;
 }
 
-export default async function Home() {
-  const response = await fetch("http://localhost:3000/api/posts");
-  const json = await response.json();
-  const data: PostProps[] = json;
+async function getPosts() {
+  const response = await api("/posts");
+  const data: PostProps[] = await response.json();
+  return data;
+}
 
-  const firstAndSecondeItem = data.filter((item, index) => index < 2);
+export default async function Home() {
+  const data = await getPosts();
+  const firstAndSecondeItem = data.filter((_item, index) => index < 2);
   const restOfItems = data.filter((item, index) => index > 1);
 
   return (

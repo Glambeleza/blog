@@ -3,10 +3,10 @@ import styles from "./page.module.css";
 import moment from "moment";
 import "moment/locale/pt-br";
 import Image from "next/image";
-import img from "/public/13.jpg";
 import Link from "next/link";
 import { AffiliateLink } from "./components/linkProduto";
 import { BiArrowBack } from "react-icons/bi";
+import { api } from "@/src/data/api";
 
 export const metadata: Metadata = {
   title: "Blog Glambeleza",
@@ -45,11 +45,15 @@ export interface BlogProps {
   paragraphs: ParagraphProps[];
 }
 
+async function getPost(id: string) {
+  const response = await api(`/post/${id}`);
+  const data: BlogProps = await response.json();
+  return data;
+}
+
 export default async function BlogPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  const response = await fetch(`http://localhost:3000/api/post/${id}`);
-  const json = await response.json();
-  const data = json;
+  const data = await getPost(id);
 
   return (
     <div className={styles.container}>
@@ -67,7 +71,7 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
         </div>
         <div className={styles.nome}>{data?.author?.name}</div>
       </div>
-      <div className={styles.date}>{data?.date}</div>
+      <div className={styles.date}>{moment(data?.date).format("LL")}</div>
       <div className={styles.contImg}>
         <Image
           src={data?.image?.src}
