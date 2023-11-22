@@ -45,3 +45,40 @@
   background: #0baf06;
   color: #ffffff;
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .list li {
+    padding: 5px;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .logoPlataform {
+    padding: 5px;
+    font-size: 1.5rem;
+  }
+
+  .btnComprar {
+    padding: 8px;
+    font-size: 0.875rem;
+    max-width: 92px;
+  }
+
+  .btnComprar:hover {
+    background: #0baf06;
+    color: #ffffff;
+  }
+}

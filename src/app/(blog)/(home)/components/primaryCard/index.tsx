@@ -3,17 +3,17 @@ import Link from "next/link";
 
 import Image from "next/image";
 import moment from "moment";
-import type { PostProps } from "@/src/data/types/posts";
+import type { PostProps } from "@/src/data/types/post";
 
 export default function PrimaryCard(post: PostProps) {
   return (
     <li key={post.id}>
       <nav>
-        <Link href={`/post/${post.id}`}>
+        <Link href={`/post/${post.slug}`}>
           <div className={styles.firstContImg}>
             <Image
-              src={post.img?.src}
-              alt={post.img?.alt}
+              src={post.image?.src}
+              alt={post.image?.alt}
               width={500}
               height={500}
               quality={90}

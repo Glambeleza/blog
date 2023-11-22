@@ -51,10 +51,6 @@ export default function Header() {
         </svg>
       </h1>
 
-      <div className={styles.menuMobile}>
-        <GiHamburgerMenu />
-      </div>
-
       <nav className={styles.nav}>
         <ul className={styles.listSocial}>
           <li className={styles.itemSocial}>

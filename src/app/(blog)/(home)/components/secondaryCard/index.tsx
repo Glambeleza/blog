@@ -2,17 +2,17 @@ import styles from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import moment from "moment";
-import { PostProps } from "../../page";
+import { PostProps } from "@/src/data/types/post";
 
 export default function SecondaryCard(post: PostProps) {
   return (
     <li key={post.id} className={styles.item}>
       <nav>
-        <Link href={`/post/${post.id}`}>
+        <Link href={`/post/${post.slug}`}>
           <div className={styles.contImg}>
             <Image
-              src={post.img.src}
-              alt={post.img.alt}
+              src={post.image?.src}
+              alt={post.image?.alt}
               width={310}
               height={280}
               quality={80}

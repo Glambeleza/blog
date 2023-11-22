@@ -1,11 +1,11 @@
-export interface AuthorProps {
-  name: string;
-  avatar: string;
-}
-
 export interface ImageProps {
   src: string;
   alt: string;
+}
+
+export interface AuthorProps {
+  name: string;
+  avatar: string;
 }
 
 export interface AffiliateLinkProps {
@@ -16,11 +16,13 @@ export interface AffiliateLinkProps {
 
 export interface ParagraphProps {
   text: string;
-  img?: ImageProps;
+  image?: ImageProps;
   linkHref?: AffiliateLinkProps[];
 }
 
-export interface BlogProps {
+export interface PostProps {
+  id: string;
+  slug: string;
   tag: string;
   title: string;
   date: string;

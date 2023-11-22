@@ -99,10 +99,13 @@
   .container {
     padding: 20px;
     min-height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .tag {
-    font-size: 1.2rem;
+    font-size: 0.875rem;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 1rem;
@@ -126,7 +129,7 @@
   }
 
   .paragrafo {
-    padding: 20px;
+    /* padding: 20px; */
     font-size: 1rem;
   }
 

@@ -86,11 +86,23 @@
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 701px) {
   .form {
     width: 100%;
     min-width: 350px;
     padding: 0;
     margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .textEmail {
+    max-width: 100%;
+    font-size: 10px;
+  }
+
+  .email {
+    color: var(--color-tertiary);
+    font-size: 10px;
+    font-weight: 500;
   }
 }

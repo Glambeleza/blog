@@ -4,7 +4,7 @@ import { IoLogoAmazon } from "react-icons/io5";
 import { SiShopee } from "react-icons/si";
 import { AiOutlineShop } from "react-icons/ai";
 import Image from "next/image";
-import { AffiliateLinkProps } from "../../page";
+import { AffiliateLinkProps } from "@/src/data/types/post";
 import Link from "next/link";
 
 interface AmazonAffiliateLinkProps {
@@ -22,7 +22,7 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
     <div className={styles.container}>
       {imgSrc && (
         <>
-          <Image alt={alt} src={imgSrc} width={300} height={300} />
+          <Image alt={alt} src={imgSrc} width={250} height={250} />
 
           <nav>
             <ul className={styles.list}>

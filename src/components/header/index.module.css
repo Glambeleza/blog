@@ -51,31 +51,43 @@
   color: var(--color-hover);
 }
 
-.menuMobile {
-  display: none;
-}
-
 @media (max-width: 740px) {
   .containerHeader {
-    width: 80%;
-    padding: 0;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-  }
-  .menuMobile {
-    display: block;
-    font-size: 24px;
+    margin-top: 10px;
+    max-width: 350px;
   }
 
   .nav {
-    display: none;
+    max-width: 140px;
   }
+
   .list {
-    display: none;
+    max-width: 100%;
   }
+
+  .item {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 10px;
+  }
+
+  .logo * {
+    margin-top: 0px;
+    font-size: 60px;
+    max-width: 100px;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
   .listSocial {
-    display: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .itemSocial {
+    font-size: 14px;
+    padding: 2px;
+    margin-right: 10px;
+    color: var(--color-tertiary);
   }
 }

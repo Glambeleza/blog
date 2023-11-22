@@ -1,28 +1,39 @@
+import "moment/locale/pt-br";
 import { Metadata } from "next";
 import styles from "./page.module.css";
 import moment from "moment";
-import "moment/locale/pt-br";
 import Image from "next/image";
 import Link from "next/link";
 import { AffiliateLink } from "./components/linkProduto";
 import { BiArrowBack } from "react-icons/bi";
 import { api } from "@/src/data/api";
-import { BlogProps } from "@/src/data/types/post";
+import { PostProps } from "@/src/data/types/post";
 
-export const metadata: Metadata = {
-  title: "Blog Glambeleza",
-  description: "Blog Glambeleza",
-};
-
-async function getPost(id: string): Promise<BlogProps> {
-  const response = await api(`/post/${id}`);
+async function getPost(slug: string): Promise<PostProps> {
+  const response = await api(`/post/${slug}`);
   const data = await response.json();
   return data;
 }
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const data = await getPost(id);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await getPost(params.slug);
+  return {
+    title: data?.title,
+    description: data?.summary,
+  };
+}
+
+export default async function BlogPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  const data = await getPost(slug);
 
   return (
     <div className={styles.container}>
@@ -52,15 +63,17 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
       </div>
       <p className={styles.resumo}>{data?.summary}</p>
 
-      {data?.paragraphs?.map((paragraph: any, index: number) => (
+      {data?.paragraphs?.map((paragraph, index) => (
         <div key={index}>
           <p className={styles.paragrafo}>{paragraph.text}</p>
-          {paragraph.linkHref && paragraph.img && (
-            <AffiliateLink
-              href={paragraph.linkHref}
-              imgSrc={paragraph.img.src}
-              alt={paragraph.img.alt}
-            />
+          {paragraph.linkHref && paragraph.image && (
+            <div>
+              <AffiliateLink
+                href={paragraph.linkHref}
+                imgSrc={paragraph.image?.src}
+                alt={paragraph.image?.alt}
+              />
+            </div>
           )}
         </div>
       ))}
