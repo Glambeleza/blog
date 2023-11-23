@@ -11,13 +11,13 @@ export function Form() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    setLoading(true);
     event.preventDefault();
+    setLoading(true);
     const formData = new FormData(event?.currentTarget);
     const data = Object.fromEntries(formData);
 
-    if (data.nome === "" || data.email === "" || data.mensagem === "") {
-      Swal.fire("Preencha todos os campos!");
+    if (data.name === "" || data.email === "" || data.message === "") {
+      Swal.fire("Por favor, preencha todos os campos.");
       setLoading(false);
       return;
     }
@@ -51,12 +51,12 @@ export function Form() {
         method="post"
         onSubmit={handleSubmit}
       >
-        <input type="text" name="nome" placeholder="Digite seu nome 😁" />
+        <input type="text" name="name" placeholder="Digite seu nome 😁" />
 
         <input type="email" name="email" placeholder="Digite o seu email 📧" />
 
         <textarea
-          name="mensagem"
+          name="message"
           placeholder="Digite uma mensagem 💌"
           rows={6}
         />
