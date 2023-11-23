@@ -1,12 +1,11 @@
 import styles from "./index.module.css";
 import Link from "next/link";
-
 import Image from "next/image";
 import moment from "moment";
 import type { PostProps } from "@/src/data/types/post";
 import MarkText from "../../components/markText";
 
-export default function PrimaryCard(post: PostProps) {
+export default async function PrimaryCard(post: PostProps) {
   return (
     <li key={post.id}>
       <nav>

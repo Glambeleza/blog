@@ -1,7 +1,7 @@
 import SkeletonPrimaryCard from "@/src/components/skeleton/primaryCardSkeleton";
 import SkeletonSecondaryCard from "@/src/components/skeleton/secondaryCardSkeleton";
 
-export default function loadingHome() {
+export default async function loadingHome() {
   return (
     <div
       style={{

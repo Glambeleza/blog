@@ -38,12 +38,20 @@
   font-size: 1rem;
   font-weight: bold;
   transition: 0.2s;
-  width: 200px;
 }
 
 .btnComprar:hover {
   background: #0baf06;
   color: #ffffff;
+}
+
+.iconStore {
+  color: var(--color-tertiary);
+}
+
+.site {
+  color: var(--color-tertiary);
+  font-size: 14px;
 }
 
 @media screen and (max-width: 700px) {

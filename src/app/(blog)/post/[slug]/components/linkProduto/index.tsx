@@ -31,15 +31,24 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                   <li key={item.to}>
                     <div className={styles.logoPlataform}>
                       {item.platform === "amazon" ? (
-                        <IoLogoAmazon />
+                        <>
+                          <IoLogoAmazon className={styles.iconStore} />
+                          <p className={styles.site}>Amazon</p>
+                        </>
                       ) : item.platform === "shopee" ? (
-                        <SiShopee />
+                        <>
+                          <SiShopee className={styles.iconStore} />
+                          <p className={styles.site}>Shopee</p>
+                        </>
                       ) : (
-                        <AiOutlineShop />
+                        <>
+                          <AiOutlineShop className={styles.iconStore} />
+                          <p className={styles.site}>Loja</p>
+                        </>
                       )}
                     </div>
                     <button className={styles.btnComprar}>
-                      Comprar {item.to}
+                      Comprar produto 💰
                     </button>
                   </li>
                 </Link>

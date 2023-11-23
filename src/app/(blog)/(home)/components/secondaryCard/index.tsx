@@ -5,7 +5,7 @@ import moment from "moment";
 import { PostProps } from "@/src/data/types/post";
 import MarkText from "../../components/markText";
 
-export default function SecondaryCard(post: PostProps) {
+export default async function SecondaryCard(post: PostProps) {
   return (
     <li key={post.id} className={styles.item}>
       <nav>

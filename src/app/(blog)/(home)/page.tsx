@@ -42,7 +42,6 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}></h1>
       <ul className={styles.firstList}>
         {firstAndSecondeItem.map((post) => (
           <PrimaryCard key={post.id} {...post} />
