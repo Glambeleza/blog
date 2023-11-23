@@ -3,7 +3,7 @@ import styles from "./social.module.css";
 import {
   BiLogoInstagramAlt,
   BiLogoTiktok,
-  BiLogoYoutube,
+  BiLogoFacebook,
 } from "react-icons/bi";
 
 export default function Social() {
@@ -31,12 +31,12 @@ export default function Social() {
               <p className={styles.socialName}>tiktok.com/glambeleza</p>
             </li>
           </Link>
-          <Link href={"https://youtube.com"} target="_blank">
+          <Link href={"https://facebook.com"} target="_blank">
             <li className={styles.item}>
               <div className={styles.icon}>
-                <BiLogoYoutube />
+                <BiLogoFacebook />
               </div>{" "}
-              <p className={styles.socialName}>youtube.com/glambeleza</p>
+              <p className={styles.socialName}>facebook.com/glambeleza</p>
             </li>
           </Link>
         </ul>

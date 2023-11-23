@@ -1,4 +1,4 @@
-import { FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTiktok, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 import styles from "./index.module.css";
@@ -64,8 +64,8 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.itemSocial}>
-            <Link href={"https://www.youtube.com"} target="_blank">
-              <FaYoutube />
+            <Link href={"https://www.facebook.com"} target="_blank">
+              <FaFacebookF />
             </Link>
           </li>
         </ul>
