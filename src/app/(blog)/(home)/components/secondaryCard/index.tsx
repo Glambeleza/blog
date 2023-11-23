@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import moment from "moment";
 import { PostProps } from "@/src/data/types/post";
+import MarkText from "../../components/markText";
 
 export default function SecondaryCard(post: PostProps) {
   return (
@@ -21,7 +22,7 @@ export default function SecondaryCard(post: PostProps) {
           <div className={styles.info}>
             <p className={styles.tag}>{post.tag?.toUpperCase()}</p>
             <h2 className={styles.titlePost} id="highlightable">
-              {post.title}
+              <MarkText>{post.title}</MarkText>
             </h2>
             <div className={styles.autorDate}>
               <div className={styles.autor}>

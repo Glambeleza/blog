@@ -1,0 +1,39 @@
+/* styles.module.css */
+
+.textHighlight {
+  background-image: linear-gradient(to right, #dbff3d 0%, #e5f3a7 100%);
+}
+
+.textHighlightLength {
+  background-size: 0px 18px;
+}
+
+.textHighlightLeftBottom {
+  background-position: left bottom;
+}
+
+.textHighlightNoRepeat {
+  background-repeat: no-repeat;
+}
+
+.textHighlightTransition {
+  transition: background-size 1000ms;
+}
+
+.textHighlightHover:hover {
+  background-size: 100% 18px;
+}
+
+.textHighlightGroupHover {
+  .group:hover & {
+    background-size: 100% 10px;
+  }
+}
+
+.textHighlightDarkMode {
+  @media (prefers-color-scheme: dark) {
+    .dark & {
+      background-image: linear-gradient(to right, #4c1d95 0%, #4e237f 100%);
+    }
+  }
+}

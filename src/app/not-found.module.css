@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 6rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.voltar {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+}
