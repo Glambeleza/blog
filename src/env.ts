@@ -1,19 +1,20 @@
+import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
-const envSchema = z.object({
-  NEXT_PUBLIC_API_URL: z.string().url(),
-  URL_IMAGE: z.string().url(),
+export const env = createEnv({
+  server: {
+    URL_IMAGE: z.string().url(),
+  },
+  client: {
+    NEXT_PUBLIC_API_URL: z.string().url(),
+  },
+  // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
+  runtimeEnv: {
+    URL_IMAGE: process.env.URL_IMAGE,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
+  // For Next.js >= 13.4.4, you only need to destructure client variables:
+  // experimental__runtimeEnv: {
+  //   NEXT_PUBLIC_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_PUBLISHABLE_KEY,
+  // }
 });
-
-const parsedEnv = envSchema.safeParse(process.env);
-
-if (!parsedEnv.success) {
-  console.error(
-    "Invalid environment variables",
-    parsedEnv.error.flatten().fieldErrors
-  );
-
-  throw new Error("Invalid environment variables.");
-}
-
-export const env = parsedEnv.data;

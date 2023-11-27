@@ -5,6 +5,7 @@ import SecondCard from "./components/secondaryCard";
 import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   // title: "Blog Glambeleza",
