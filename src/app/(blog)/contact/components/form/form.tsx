@@ -45,6 +45,7 @@ export function Form() {
 
   return (
     <>
+      <h3 className={styles.title}>👋 Olá, envie aqui uma sugestão de post</h3>
       <form
         action=""
         className={styles.form}

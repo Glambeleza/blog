@@ -74,8 +74,7 @@
 }
 
 .nome {
-  font-family: Tangerine;
-  font-size: 2rem;
+  font-size: 14px;
   font-weight: 700;
   color: #555;
 
@@ -116,6 +115,7 @@
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     letter-spacing: 0.5px;
+    text-align: center;
   }
 
   .contImg img {
@@ -160,8 +160,7 @@
   }
 
   .nome {
-    font-family: Tangerine;
-    font-size: 1.8rem;
+    font-size: 12px;
   }
 }
 

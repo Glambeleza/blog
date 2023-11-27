@@ -6,6 +6,7 @@ import Footer from "../components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: {
     default: "Glambeleza",
     template: "%s | Glambeleza",

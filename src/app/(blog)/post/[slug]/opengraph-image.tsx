@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 import { env } from "@/src/env";
 import Image from "next/image";
 import { PostProps } from "@/src/data/types/post";

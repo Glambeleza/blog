@@ -80,13 +80,7 @@
   }
 
   .btnComprar {
-    padding: 8px;
-    font-size: 0.875rem;
-    max-width: 92px;
-  }
-
-  .btnComprar:hover {
-    background: #0baf06;
-    color: #ffffff;
+    padding: 8px 3px 3px 3px;
+    font-size: 10px;
   }
 }

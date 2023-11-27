@@ -1,3 +1,11 @@
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #666;
+  max-width: 450px;
+  letter-spacing: 0.8px;
+}
 .form {
   display: flex;
   flex-direction: column;

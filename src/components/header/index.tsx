@@ -1,5 +1,4 @@
 import { FaTiktok, FaInstagram, FaFacebookF } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 import styles from "./index.module.css";
 
