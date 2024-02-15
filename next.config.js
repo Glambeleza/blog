@@ -15,6 +15,10 @@ const nextConfig = {
         hostname: "github.com",
       },
       {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
       },

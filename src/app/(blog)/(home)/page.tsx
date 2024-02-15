@@ -5,27 +5,25 @@ import SecondCard from "./components/secondaryCard";
 import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
 import { Metadata } from "next";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   // title: "Blog Glambeleza",
   description: "Blog Glambeleza",
 };
 
-async function getPosts(): Promise<PostProps[]> {
-  // const teste = await new Promise((resolve) => {
-  //   setTimeout(() => {
-  //     resolve("ok");
-  //   }, 5000);
-  // });
-
+async function getPosts(page?: number): Promise<PostProps[]> {
   const response = await api("/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ page }),
     next: {
-      revalidate: 60 * 60 * 24, // 24 hours
+      revalidate: 60 * 60 * 6, // 6 hours
     },
   });
   const data = await response.json();
-  return data;
+  return data.posts;
 }
 
 export async function generateStaticParams() {
@@ -37,7 +35,8 @@ export async function generateStaticParams() {
 }
 
 export default async function Home() {
-  const data = await getPosts();
+  const page = 1;
+  const data = await getPosts(page);
   const firstAndSecondeItem = data.filter((_, index) => index < 2);
   const restOfItems = data.filter((_, index) => index > 1);
 
