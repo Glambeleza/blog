@@ -1,7 +1,11 @@
 /* styles.module.css */
 
 .textHighlight {
-  background-image: linear-gradient(to right, #dbff3d 0%, #e5f3a7 100%);
+  background-image: linear-gradient(
+    to right,
+    var(--color-markup) 0%,
+    var(--color-markup) 100%
+  );
 }
 
 .textHighlightLength {
