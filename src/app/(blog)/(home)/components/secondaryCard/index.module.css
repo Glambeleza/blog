@@ -155,16 +155,10 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  .item {
-    width: 100%;
-  }
-
   .contImg img {
-    min-width: 200px;
-    width: 100%;
+    width: 100vw;
     height: 205.5px;
-    object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0;
     transition: transform 0.3s;
   }
 
@@ -175,7 +169,8 @@
   }
 
   .info {
-    width: 100%;
+    width: 100vw;
+    padding: 0.8rem;
   }
 
   .tag {
