@@ -1,6 +1,13 @@
 import { FaTiktok, FaInstagram, FaFacebookF } from "react-icons/fa";
 import Link from "next/link";
 import styles from "./index.module.css";
+import Image from "next/image";
+import { Tangerine } from "next/font/google";
+
+const tangerine = Tangerine({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Header() {
   return (
@@ -16,7 +23,7 @@ export default function Header() {
         </ul>
       </nav>
 
-      <h1 className={styles.logo}>
+      <h1 className={`${styles.logo} ${tangerine.className}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="200"
@@ -40,10 +47,11 @@ export default function Header() {
             y="50%"
             fontFamily="Tangerine"
             fontSize="50"
-            fontWeight={700}
+            fontWeight="700"
             textAnchor="middle"
             dominantBaseline="middle"
             fill="url(#text-gradient)"
+            className={tangerine.className}
           >
             Glambeleza
           </text>
