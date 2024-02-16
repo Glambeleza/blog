@@ -25,10 +25,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   justify-items: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   max-width: 100%;
-  background-color: green;
+  border-radius: 5px;
 }
 
 /* Tablet and Smaller Desktop */

@@ -2,6 +2,23 @@
   max-width: 600px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .contImg img {
   width: 310px;
   height: 280px;
@@ -20,9 +37,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   margin-top: 1rem;
   max-width: 490px;
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .tag {
