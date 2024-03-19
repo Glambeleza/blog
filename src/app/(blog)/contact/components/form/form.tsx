@@ -49,6 +49,7 @@ export function Form() {
         className={styles.form}
         method="post"
         onSubmit={handleSubmit}
+        autoComplete="off"
       >
         <input type="text" name="name" placeholder="Digite seu nome 😁" />
 

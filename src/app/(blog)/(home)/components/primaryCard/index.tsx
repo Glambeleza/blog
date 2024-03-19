@@ -7,8 +7,8 @@ import MarkText from "../../components/markText";
 
 export default async function PrimaryCard(post: PostProps) {
   return (
-    <Link href={`/post/${post?.id}`}>
-      <li key={post?.id} className={styles.container}>
+    <div key={post?.id} className={styles.container}>
+      <Link href={`/post/${post?.id}`} title={post?.title}>
         <div className={styles.cont}>
           <div className={styles.firstContImg}>
             <Image
@@ -44,7 +44,7 @@ export default async function PrimaryCard(post: PostProps) {
             </div>
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </div>
   );
 }

@@ -56,9 +56,10 @@ export default async function BlogPage({
         <Image
           src={data?.image}
           alt={data?.title}
-          width={1000}
+          width={980}
           height={400}
           quality={100}
+          priority
         />
       </div>
       <p className={styles.resumo}>{data?.summary}</p>
@@ -83,7 +84,7 @@ export default async function BlogPage({
         </div>
       ))}
 
-      <Link href="/" className={styles.voltar}>
+      <Link href="/" className={styles.voltar} title="Voltar">
         <BiArrowBack /> Voltar
       </Link>
     </div>

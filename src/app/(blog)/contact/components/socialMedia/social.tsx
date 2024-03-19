@@ -16,48 +16,58 @@ export default function Social() {
       </h3>
       <nav>
         <ul className={styles.list}>
-          <Link
-            href={"https://www.instagram.com/glambeleza_oficial/"}
-            target="_blank"
-          >
-            <li className={styles.item}>
+          <li className={styles.item}>
+            <Link
+              href={"https://www.instagram.com/glambeleza_oficial/"}
+              target="_blank"
+              title="Instagram"
+            >
               <div className={styles.icon}>
                 <BiLogoInstagramAlt />
               </div>{" "}
               <p className={styles.socialName}>
                 instagram.com/glambeleza_oficial
               </p>
-            </li>
-          </Link>
-          <Link href={"https://www.tiktok.com/@glambeleza"} target="_blank">
-            <li className={styles.item}>
+            </Link>
+          </li>
+          <li className={styles.item}>
+            <Link
+              href={"https://www.tiktok.com/@glambeleza"}
+              target="_blank"
+              title="Tiktok"
+            >
               <div className={styles.icon}>
                 <BiLogoTiktok />
               </div>{" "}
               <p className={styles.socialName}>
                 tiktok.com/glambeleza/@glambeleza
               </p>
-            </li>
-          </Link>
-          <Link
-            href={"https://www.facebook.com/profile.php?id=61553818143882"}
-            target="_blank"
-          >
-            <li className={styles.item}>
+            </Link>
+          </li>
+          <li className={styles.item}>
+            <Link
+              href={"https://www.facebook.com/profile.php?id=61553818143882"}
+              target="_blank"
+              title="Facebook"
+            >
               <div className={styles.icon}>
                 <BiLogoFacebook />
               </div>{" "}
               <p className={styles.socialName}>facebook.com/glambeleza</p>
-            </li>
-          </Link>
-          <Link href={"https://br.pinterest.com/glambeleza/"} target="_blank">
-            <li className={styles.item}>
+            </Link>
+          </li>
+          <li className={styles.item}>
+            <Link
+              href={"https://br.pinterest.com/glambeleza/"}
+              target="_blank"
+              title="Pinterest"
+            >
               <div className={styles.icon}>
                 <BiLogoPinterest />
               </div>{" "}
               <p className={styles.socialName}>pinterest.com/glambeleza</p>
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
       </nav>
     </>

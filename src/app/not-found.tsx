@@ -14,7 +14,7 @@ export default async function NotFound() {
           disponível temporariamente.
         </p>
 
-        <Link href="/" className={styles.voltar}>
+        <Link href="/" className={styles.voltar} title="Voltar">
           <BiArrowBack /> Voltar
         </Link>
       </div>

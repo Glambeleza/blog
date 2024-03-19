@@ -12,7 +12,7 @@
   list-style: none;
   padding: 0;
 }
-.item {
+.item a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -21,7 +21,7 @@
   color: var(--color-tertiary);
 }
 
-.item p {
+.item a p {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
@@ -29,7 +29,7 @@
   margin-bottom: 10px;
 }
 
-.item p:hover {
+.item a p:hover {
   color: var(--color-hover);
 }
 .item:hover {
@@ -47,13 +47,7 @@
     display: none;
   }
   .list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    min-width: 250px;
-    margin-bottom: 50px;
+    display: none;
   }
 
   .socialName {

@@ -5,6 +5,7 @@ import SecondCard from "./components/secondaryCard";
 import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
 import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   // title: "Blog Glambeleza",
@@ -44,12 +45,16 @@ export default async function Home() {
     <main className={styles.main}>
       <ul className={styles.firstList}>
         {firstAndSecondeItem.map((post) => (
-          <PrimaryCard key={post.id} {...post} />
+          <li key={post.id}>
+            <PrimaryCard {...post} />
+          </li>
         ))}
       </ul>
       <ul className={styles.secondList}>
         {restOfItems.map((post) => (
-          <SecondCard key={post.id} {...post} />
+          <li key={post.id}>
+            <SecondCard {...post} />
+          </li>
         ))}
       </ul>
     </main>

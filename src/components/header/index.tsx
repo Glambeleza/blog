@@ -16,16 +16,27 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={`${styles.list}`}>
           <li className={`${styles.item} ${inter.className}`}>
-            <Link href={"/"}>Início</Link>
+            <Link href={"/"} title="Início">
+              Início
+            </Link>
           </li>
           <li className={`${styles.item} ${inter.className}`}>
-            <Link href={"/contact"}>Contato</Link>
+            <Link href={"/contact"} title="Contato">
+              Contato
+            </Link>
           </li>
         </ul>
       </nav>
 
       <h1 className={styles.logo}>
-        <Image src="/logo.png" alt="Glambeleza" width={200} height={200} />
+        <Image
+          src="/logo.png"
+          alt="Glambeleza"
+          width={200}
+          height={200}
+          priority
+          fetchPriority="high"
+        />
       </h1>
 
       <nav className={styles.nav}>
@@ -34,12 +45,17 @@ export default function Header() {
             <Link
               href={"https://www.instagram.com/glambeleza_oficial/"}
               target="_blank"
+              title="Instagram"
             >
               <FaInstagram />
             </Link>
           </li>
           <li className={styles.itemSocial}>
-            <Link href={"https://www.tiktok.com/@glambeleza"} target="_blank">
+            <Link
+              href={"https://www.tiktok.com/@glambeleza"}
+              target="_blank"
+              title="Tiktok"
+            >
               <FaTiktok />
             </Link>
           </li>
@@ -47,12 +63,17 @@ export default function Header() {
             <Link
               href={"https://www.facebook.com/profile.php?id=61553818143882"}
               target="_blank"
+              title="Facebook"
             >
               <FaFacebookF />
             </Link>
           </li>
           <li className={styles.itemSocial}>
-            <Link href={"https://br.pinterest.com/glambeleza/"} target="_blank">
+            <Link
+              href={"https://br.pinterest.com/glambeleza/"}
+              target="_blank"
+              title="Pinterest"
+            >
               <FaPinterestP />
             </Link>
           </li>

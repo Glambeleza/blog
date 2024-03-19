@@ -14,6 +14,7 @@ export interface AuthorProps {
 export interface AffiliateLinkProps {
   id: string;
   paragraph_id: string;
+  title: string;
   href: string;
   platform: string;
   image: string;
