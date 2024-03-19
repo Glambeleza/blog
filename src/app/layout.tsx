@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../components/header";
 import Footer from "../components/footer";
-const inter = Inter({ subsets: ["latin"] });
+import { inter, alike } from "@/src/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt">
-      <body className={inter.className}>
+    <html lang="pt" className={inter.className}>
+      <body>
         <Header />
         {children}
         <Footer />

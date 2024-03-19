@@ -174,10 +174,11 @@
     /* width: 100%; */
     width: 100vw;
     padding: 0.8rem;
+    margin: 0;
   }
 
   .tag {
-    padding: 5px 0;
+    padding: 0;
   }
 
   .titlePost {
