@@ -18,35 +18,38 @@
   max-width: 800px;
 }
 
-.list li {
+.list li a {
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.logoPlataform {
+.list li a img {
   width: 100%;
-  padding: 1rem;
-  font-size: 2rem;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .btnComprar {
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border: 0;
   border-radius: 0.5rem;
-  background: #068d01;
-  color: #fff;
+  background: var(--color-primary);
+  text-shadow: #000 1px 1px 2px;
+  color: #fffdfd;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.2s;
+
+  letter-spacing: 0.5px;
 }
 
 .btnComprar:hover {
-  background: #0baf06;
-  color: #ffffff;
-}
-
-.iconStore {
-  color: var(--color-tertiary);
+  background: var(--color-secondary);
 }
 
 .site {
@@ -61,26 +64,7 @@
   }
 
   .list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     max-width: 300px;
-  }
-
-  .list li {
-    padding: 5px;
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  .logoPlataform {
-    padding: 5px;
-    font-size: 1.5rem;
-  }
-
-  .btnComprar {
-    padding: 8px 3px 3px 3px;
-    font-size: 10px;
   }
 }

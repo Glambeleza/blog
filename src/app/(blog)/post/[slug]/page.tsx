@@ -12,7 +12,7 @@ import { PostProps } from "@/src/data/types/post";
 async function getPost(slug: string): Promise<PostProps> {
   const response = await api(`/post/${slug}`);
   const data = await response.json();
-  return data;
+  return data.post;
 }
 
 export async function generateMetadata({
@@ -51,11 +51,11 @@ export default async function BlogPage({
         </div>
         <div className={styles.nome}>{data?.author?.name}</div>
       </div>
-      <div className={styles.date}>{moment(data?.date).format("LL")}</div>
+      <div className={styles.date}>{moment(data?.created_at).format("LL")}</div>
       <div className={styles.contImg}>
         <Image
-          src={data?.image?.src}
-          alt={data?.image?.alt}
+          src={data?.image}
+          alt={data?.title}
           width={1000}
           height={400}
           quality={100}
@@ -65,15 +65,20 @@ export default async function BlogPage({
 
       {data?.paragraphs?.map((paragraph, index) => (
         <div key={index}>
-          <p className={styles.paragrafo}>{paragraph.text}</p>
-          {paragraph.linkHref && paragraph.image && (
+          {paragraph.affiliates && (
             <div>
-              <AffiliateLink
-                href={paragraph.linkHref}
-                imgSrc={paragraph.image?.src}
-                alt={paragraph.image?.alt}
-              />
+              <AffiliateLink affiliates={paragraph?.affiliates} />
             </div>
+          )}
+
+          <p className={styles.paragrafo}>{paragraph.text}</p>
+          {paragraph.image && (
+            <Image
+              alt={paragraph.text}
+              src={paragraph.image}
+              width={250}
+              height={250}
+            />
           )}
         </div>
       ))}

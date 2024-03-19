@@ -12,14 +12,17 @@ export interface AuthorProps {
 }
 
 export interface AffiliateLinkProps {
+  id: string;
+  paragraph_id: string;
   href: string;
   platform: string;
+  image: string;
 }
 
 export interface ParagraphProps {
   text: string;
   image?: string;
-  linkHref?: AffiliateLinkProps[];
+  affiliates?: AffiliateLinkProps[];
 }
 
 export interface PostProps {

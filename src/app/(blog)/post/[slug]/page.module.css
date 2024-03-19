@@ -34,10 +34,11 @@
 }
 
 .contImg img {
-  width: 1000px;
+  width: 980px;
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .resumo {

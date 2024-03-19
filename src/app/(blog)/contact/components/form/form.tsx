@@ -23,7 +23,6 @@ export function Form() {
     }
 
     try {
-      console.log(JSON.stringify(data));
       Swal.fire({
         title: "Obrigado!",
         text: "Sua mensagem foi enviada com sucesso. Retornarei o mais breve possível.",
@@ -31,7 +30,6 @@ export function Form() {
         confirmButtonText: "Ok",
       });
     } catch (error) {
-      console.log(error);
       Swal.fire({
         title: "Ops...",
         text: "Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.",

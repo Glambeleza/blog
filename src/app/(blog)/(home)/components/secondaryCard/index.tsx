@@ -28,14 +28,14 @@ export default async function SecondaryCard(post: PostProps) {
               <div className={styles.autor}>
                 <div className={styles.avatar}>
                   <Image
-                    src={post?.author.avatar}
-                    alt={post?.author.name}
+                    src={post?.author?.avatar}
+                    alt={post?.author?.name}
                     width={25}
                     height={25}
                     quality={100}
                   />
                 </div>
-                <div className={styles.nome}>{post?.author.name}</div>
+                <div className={styles.nome}>{post?.author?.name}</div>
               </div>
               <p className={styles.date}>
                 {moment(post?.created_at).format("LL")}

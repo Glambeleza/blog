@@ -12,12 +12,18 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "m.media-amazon.com",
+      },
+
+      {
+        protocol: "https",
         hostname: "github.com",
       },
       {
         protocol: "https",
         hostname: "media.licdn.com",
       },
+
       {
         protocol: "http",
         hostname: "localhost",
