@@ -1,4 +1,4 @@
-import { Inter, Alike, Tangerine } from "next/font/google";
+import { Inter, Alike } from "next/font/google";
 
 export const inter = Inter({
   subsets: ["latin"],
