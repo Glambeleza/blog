@@ -23,7 +23,14 @@ export default function RootLayout({
     <html lang="pt" className={inter.className}>
       <body>
         <Header />
-        {children}
+        <main
+          style={{
+            maxWidth: "var(--max-width)",
+            margin: "0 auto",
+          }}
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -4,6 +4,8 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     URL_IMAGE: z.string().url(),
+    RESEND_API_KEY: z.string().min(1),
+    RESEND_API_EMAIL: z.string().email(),
   },
   client: {
     NEXT_PUBLIC_API_URL: z.string().url(),
@@ -12,6 +14,8 @@ export const env = createEnv({
   runtimeEnv: {
     URL_IMAGE: process.env.URL_IMAGE,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    RESEND_API_EMAIL: process.env.RESEND_API_EMAIL,
   },
   // For Next.js >= 13.4.4, you only need to destructure client variables:
   // experimental__runtimeEnv: {

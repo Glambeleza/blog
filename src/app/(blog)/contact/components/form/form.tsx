@@ -9,14 +9,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import zod from "zod";
 
 const formValidationSchema = zod.object({
-  name: zod.string().min(3, { message: "Por favor, preencha o campo nome." }),
-  email: zod.string().email({ message: "Por favor, preencha o campo email." }),
-  message: zod
-    .string()
-    .min(3, { message: "Por favor, preencha o campo mensagem." }),
+  name: zod.string().min(3, {
+    message: "Olá, por favor preencha o campo com um nome válido. 😁",
+  }),
+  email: zod.string().email({
+    message: "Olá, por favor preencha o campo com um e-mail válido. 😁",
+  }),
+  message: zod.string().min(3, {
+    message: "Olá, por favor preencha o campo com uma mensagem. 😁",
+  }),
 });
 
-type FormProps = zod.infer<typeof formValidationSchema>;
+export type FormProps = zod.infer<typeof formValidationSchema>;
 
 export function Form() {
   const [loading, setLoading] = useState(false);
@@ -29,28 +33,46 @@ export function Form() {
       message: "",
     },
   });
-
   const { errors } = formState;
 
-  const handleForm = (data: FormProps) => {
+  const handleForm = async (props: FormProps) => {
+    setLoading(true);
     try {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        reset();
+      const response = await fetch("http://localhost:3000/api/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ props }),
+      });
+      const data = await response.json();
+      setLoading(false);
+
+      if (data.error) {
         return Swal.fire({
-          icon: "success",
-          title: "Sugestão enviada com sucesso!",
-          text: "Obrigado por enviar sua sugestão de post, em breve entraremos em contato.",
+          icon: "error",
+          iconHtml: "😬",
+          title: "Ops, algo deu errado!",
+          text: "Por favor, tente novamente mais tarde. 😁",
           confirmButtonText: "Ok",
         });
-      }, 2000);
+      }
+
+      reset();
+      return Swal.fire({
+        icon: "success",
+        iconHtml: "😍",
+        title: "Sugestão enviada com sucesso!",
+        text: "Obrigado por enviar sua sugestão de post, em breve entraremos em contato. 😁",
+        confirmButtonText: "Ok",
+      });
     } catch (error) {
       setLoading(false);
       return Swal.fire({
         icon: "error",
+        iconHtml: "😬",
         title: "Ops, algo deu errado!",
-        text: "Por favor, tente novamente mais tarde.",
+        text: "Por favor, tente novamente mais tarde. 😁",
         confirmButtonText: "Ok",
       });
     }
