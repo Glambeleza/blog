@@ -39,16 +39,14 @@ export function Form() {
   const handleForm = async (props: FormProps) => {
     setLoading(true);
     try {
-      const response = await fetch(
-        `${env.NEXT_PUBLIC_URL_IMAGE}/api/email/send`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ props }),
-        }
-      );
+      const response = await fetch(`${env.NEXT_PUBLIC_URL_IMAGE}/email/send`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ props }),
+        cache: "no-cache",
+      });
       const data = await response.json();
       setLoading(false);
 

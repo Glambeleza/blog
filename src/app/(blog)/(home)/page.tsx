@@ -19,18 +19,19 @@ async function getPosts(page?: number): Promise<PostProps[]> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ page }),
+    cache: "force-cache",
     next: {
-      revalidate: 60 * 60 * 6, // 6 hours
+      revalidate: 60 * 60 * 1, // 1 hours
     },
   });
-  const data = await response.json();
-  return data.posts;
+  const data = await response?.json();
+  return data?.posts;
 }
 
 export async function generateStaticParams() {
   const posts = await getPosts();
-  const firstAndSecondeItem = posts.filter((_, index) => index < 2);
-  return firstAndSecondeItem.map((post) => ({
+  const firstAndSecondeItem = posts?.filter((_, index) => index < 2);
+  return firstAndSecondeItem?.map((post) => ({
     params: { slug: post.id },
   }));
 }
@@ -38,20 +39,20 @@ export async function generateStaticParams() {
 export default async function Home() {
   const page = 1;
   const data = await getPosts(page);
-  const firstAndSecondeItem = data.filter((_, index) => index < 2);
-  const restOfItems = data.filter((_, index) => index > 1);
+  const firstAndSecondeItem = data?.filter((_, index) => index < 2);
+  const restOfItems = data?.filter((_, index) => index > 1);
 
   return (
     <main className={styles.main}>
       <ul className={styles.firstList}>
-        {firstAndSecondeItem.map((post) => (
+        {firstAndSecondeItem?.map((post) => (
           <li key={post.id}>
             <PrimaryCard {...post} />
           </li>
         ))}
       </ul>
       <ul className={styles.secondList}>
-        {restOfItems.map((post) => (
+        {restOfItems?.map((post) => (
           <li key={post.id}>
             <SecondCard {...post} />
           </li>

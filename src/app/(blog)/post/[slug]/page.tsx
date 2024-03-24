@@ -10,7 +10,16 @@ import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
 
 async function getPost(slug: string): Promise<PostProps> {
-  const response = await api(`/post/${slug}`);
+  const response = await api(`/post/${slug}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    cache: "force-cache",
+    next: {
+      revalidate: 60 * 60 * 1, // 1 hours
+    },
+  });
   const data = await response.json();
   return data.post;
 }
