@@ -8,7 +8,7 @@ import MarkText from "../../components/markText";
 export default async function SecondaryCard(post: PostProps) {
   return (
     <div key={post?.id} className={styles.container}>
-      <Link href={`/post/${post?.id}`} title={post?.title}>
+      <Link href={`/post/${post?.slug}`} title={post?.title}>
         <div className={styles.cont}>
           <div className={styles.contImg}>
             <Image

@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { env } from "@/src/env";
 import Image from "next/image";
 import { PostProps } from "@/src/data/types/post";
 import { api } from "@/src/data/api";
@@ -8,7 +7,7 @@ import { api } from "@/src/data/api";
 export const runtime = "edge";
 
 // Image metadata
-export const alt = "About Acme";
+export const alt = "Glambeleza";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +41,9 @@ export default async function OgImage({
           justifyContent: "center",
         }}
       >
-        <Image src={post.image} alt={post.title} width={1200} height={630} />
+        <div>
+          <Image src={post.image} alt={post.title} width={1200} height={630} />
+        </div>
       </div>
     ),
     {

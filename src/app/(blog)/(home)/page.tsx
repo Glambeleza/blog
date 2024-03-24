@@ -19,7 +19,6 @@ async function getPosts(page?: number): Promise<PostProps[]> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ page }),
-    cache: "force-cache",
     next: {
       revalidate: 60 * 60 * 1, // 1 hours
     },

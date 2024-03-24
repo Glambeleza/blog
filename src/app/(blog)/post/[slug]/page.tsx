@@ -15,7 +15,6 @@ async function getPost(slug: string): Promise<PostProps> {
     headers: {
       "Content-Type": "application/json",
     },
-    cache: "force-cache",
     next: {
       revalidate: 60 * 60 * 1, // 1 hours
     },
