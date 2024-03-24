@@ -4,9 +4,10 @@ import type { Metadata } from "next";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { inter, alike } from "@/src/fonts";
+import { env } from "../env";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(env.URL_IMAGE),
   title: {
     default: "Glambeleza",
     template: "%s | Glambeleza",

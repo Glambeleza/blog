@@ -67,7 +67,7 @@ export default async function BlogPage({
           alt={data?.title}
           width={980}
           height={400}
-          quality={100}
+          quality={75}
           priority
         />
       </div>
@@ -84,10 +84,11 @@ export default async function BlogPage({
           <p className={styles.paragrafo}>{paragraph.text}</p>
           {paragraph.image && (
             <Image
-              alt={paragraph.text}
               src={paragraph.image}
-              width={250}
-              height={250}
+              alt={paragraph.text}
+              width={300}
+              height={300}
+              quality={75}
             />
           )}
         </div>

@@ -42,7 +42,7 @@ export default async function OgImage({
           justifyContent: "center",
         }}
       >
-        <Image src={post.image} alt="" width={1200} height={630} />
+        <Image src={post.image} alt={post.title} width={1200} height={630} />
       </div>
     ),
     {
