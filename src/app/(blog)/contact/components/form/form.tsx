@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import zod from "zod";
+import { env } from "@/src/env";
 
 const formValidationSchema = zod.object({
   name: zod.string().min(3, {
@@ -38,17 +39,21 @@ export function Form() {
   const handleForm = async (props: FormProps) => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/email/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ props }),
-      });
+      const response = await fetch(
+        `${env.NEXT_PUBLIC_URL_IMAGE}/api/email/send`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ props }),
+        }
+      );
       const data = await response.json();
       setLoading(false);
 
       if (data.error) {
+        console.error(data.error);
         return Swal.fire({
           icon: "error",
           iconHtml: "😬",
@@ -62,11 +67,12 @@ export function Form() {
       return Swal.fire({
         icon: "success",
         iconHtml: "😍",
-        title: "Sugestão enviada com sucesso!",
-        text: "Obrigado por enviar sua sugestão de post, em breve entraremos em contato. 😁",
+        title: "Mensagem enviada com sucesso!",
+        text: "Obrigado, em breve entraremos em contato. 😁",
         confirmButtonText: "Ok",
       });
     } catch (error) {
+      console.error(error);
       setLoading(false);
       return Swal.fire({
         icon: "error",
