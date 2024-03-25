@@ -1,10 +1,9 @@
 import {
-  FaTiktok,
-  FaInstagram,
-  FaFacebookF,
-  FaPinterest,
-  FaPinterestP,
-} from "react-icons/fa";
+  BiLogoInstagramAlt,
+  BiLogoPinterest,
+  BiLogoFacebook,
+  BiLogoTiktok,
+} from "react-icons/bi";
 import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
@@ -47,7 +46,7 @@ export default function Header() {
               target="_blank"
               title="Instagram"
             >
-              <FaInstagram />
+              <BiLogoInstagramAlt />
             </Link>
           </li>
           <li className={styles.itemSocial}>
@@ -56,7 +55,7 @@ export default function Header() {
               target="_blank"
               title="Tiktok"
             >
-              <FaTiktok />
+              <BiLogoTiktok />
             </Link>
           </li>
           <li className={styles.itemSocial}>
@@ -65,7 +64,7 @@ export default function Header() {
               target="_blank"
               title="Facebook"
             >
-              <FaFacebookF />
+              <BiLogoFacebook />
             </Link>
           </li>
           <li className={styles.itemSocial}>
@@ -74,7 +73,7 @@ export default function Header() {
               target="_blank"
               title="Pinterest"
             >
-              <FaPinterestP />
+              <BiLogoPinterest />
             </Link>
           </li>
         </ul>
