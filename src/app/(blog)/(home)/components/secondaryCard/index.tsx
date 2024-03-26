@@ -16,7 +16,7 @@ export default async function SecondaryCard(post: PostProps) {
               alt={post?.summary}
               width={310}
               height={280}
-              quality={80}
+              quality={100}
             />
           </div>
           <div className={styles.info}>

@@ -16,7 +16,7 @@ export default async function PrimaryCard(post: PostProps) {
               alt={post?.summary}
               width={500}
               height={500}
-              quality={90}
+              quality={100}
               priority
             />
           </div>
@@ -34,7 +34,7 @@ export default async function PrimaryCard(post: PostProps) {
                     alt={post?.author?.name}
                     width={25}
                     height={25}
-                    quality={80}
+                    quality={100}
                     priority
                   />
                 </div>

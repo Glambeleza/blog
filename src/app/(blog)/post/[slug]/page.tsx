@@ -54,7 +54,7 @@ export default async function BlogPage({
             alt={data?.author?.name}
             width={50}
             height={50}
-            quality={80}
+            quality={100}
           />
         </div>
         <div className={styles.nome}>{data?.author?.name}</div>
@@ -66,7 +66,7 @@ export default async function BlogPage({
           alt={data?.title}
           width={980}
           height={400}
-          quality={75}
+          quality={100}
           priority
         />
       </div>
@@ -87,7 +87,7 @@ export default async function BlogPage({
               alt={paragraph.text}
               width={300}
               height={300}
-              quality={75}
+              quality={100}
             />
           )}
         </div>

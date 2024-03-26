@@ -29,7 +29,7 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                       alt={item.platform}
                       width={300}
                       height={300}
-                      quality={80}
+                      quality={100}
                     />
 
                     <button className={styles.btnComprar}>
