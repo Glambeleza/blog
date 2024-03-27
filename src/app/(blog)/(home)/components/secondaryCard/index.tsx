@@ -12,8 +12,8 @@ export default async function SecondaryCard(post: PostProps) {
         <div className={styles.cont}>
           <div className={styles.contImg}>
             <Image
-              src={post?.image}
-              alt={post?.summary}
+              src={post?.image || "/logo.png"}
+              alt={"Imagem principal do conteúdo sobre " + post?.title}
               width={310}
               height={280}
               quality={100}

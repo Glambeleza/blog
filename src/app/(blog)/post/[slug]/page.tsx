@@ -84,7 +84,7 @@ export default async function BlogPage({
           {paragraph.image && (
             <Image
               src={paragraph.image}
-              alt={paragraph.text}
+              alt={"Imagem mostrando produto"}
               width={300}
               height={300}
               quality={100}

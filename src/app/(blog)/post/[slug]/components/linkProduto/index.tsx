@@ -26,7 +26,7 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                     <br />
                     <Image
                       src={item.image}
-                      alt={item.platform}
+                      alt={"Imagem principal do conteúdo"}
                       width={300}
                       height={300}
                       quality={100}
