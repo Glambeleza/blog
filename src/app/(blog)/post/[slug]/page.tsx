@@ -62,7 +62,7 @@ export default async function BlogPage({
       <div className={styles.date}>{moment(data?.created_at).format("LL")}</div>
       <div className={styles.contImg}>
         <Image
-          src={data?.image}
+          src={data?.image || "/opengraph-image.png"}
           alt={data?.title}
           width={980}
           height={400}

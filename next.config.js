@@ -12,37 +12,26 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "m.media-amazon.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "plus.unsplash.com",
+        hostname: "*.unsplash.com",
       },
 
       {
         protocol: "https",
         hostname: "github.com",
       },
-      {
-        protocol: "https",
-        hostname: "media.licdn.com",
-      },
 
       {
         protocol: "http",
         hostname: "localhost",
       },
+
       {
         protocol: "https",
-        hostname: "stablo-template.vercel.app",
+        hostname: "m.media-amazon.com",
       },
       {
         protocol: "https",
-        hostname: "encrypted-tbn0.gstatic.com",
+        hostname: "stablo-template.vercel.app",
       },
     ],
   },
