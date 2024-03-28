@@ -3,11 +3,12 @@ import { useState } from "react";
 import styles from "./form.module.css";
 import { RiMailSendLine } from "react-icons/ri";
 import { CgSpinnerTwo } from "react-icons/cg";
-import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import zod from "zod";
 import { env } from "@/src/env";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const formValidationSchema = zod.object({
   name: zod.string().min(3, {
@@ -37,8 +38,8 @@ export function Form() {
   const { errors } = formState;
 
   const handleForm = async (props: FormProps) => {
-    setLoading(true);
     try {
+      setLoading(true);
       const response = await fetch(`${env.NEXT_PUBLIC_URL_IMAGE}/email/send`, {
         method: "POST",
         headers: {
@@ -49,36 +50,50 @@ export function Form() {
       });
       const data = await response.json();
       setLoading(false);
-
       if (data.error) {
         console.error(data.error);
-        return Swal.fire({
-          icon: "error",
-          iconHtml: "😬",
-          title: "Ops, algo deu errado!",
-          text: "Por favor, tente novamente mais tarde. 😁",
-          confirmButtonText: "Ok",
-        });
+        return toast.error(
+          "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
+          {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
       }
-
       reset();
-      return Swal.fire({
-        icon: "success",
-        iconHtml: "😍",
-        title: "Mensagem enviada com sucesso!",
-        text: "Obrigado, em breve entraremos em contato. 😁",
-        confirmButtonText: "Ok",
+
+      return toast.success("Mensagem enviada com sucesso! Obrigado. 😁", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
     } catch (error) {
       console.error(error);
       setLoading(false);
-      return Swal.fire({
-        icon: "error",
-        iconHtml: "😬",
-        title: "Ops, algo deu errado!",
-        text: "Por favor, tente novamente mais tarde. 😁",
-        confirmButtonText: "Ok",
-      });
+      return toast.error(
+        "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
+        {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
     }
   };
 
@@ -136,6 +151,19 @@ export function Form() {
         Se preferir envie um email para{" "}
         <span className={styles.email}>contato@glambeleza.com.br</span>
       </p>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </>
   );
 }

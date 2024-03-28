@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const { name, email, message } = body.props;
     const { data, error } = await resend.emails.send({
       from: `Glambeleza <${env.RESEND_API_EMAIL}>`,
-      to: [env.RESEND_API_EMAIL],
+      to: ["contatoglambeleza@gmail.com"],
       subject: "Blog - Nova mensagem de contato! 📬",
       react: EmailTemplate({
         name,
@@ -27,6 +27,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
+      console.error(error);
       return NextResponse.json({ error });
     }
 
