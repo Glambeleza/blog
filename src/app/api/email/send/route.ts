@@ -15,8 +15,8 @@ export async function POST(request: NextRequest) {
     const body: EmailProps = await request.json();
     const { name, email, message } = body.props;
     const { data, error } = await resend.emails.send({
-      from: `Glambeleza <${env.RESEND_API_EMAIL}>`,
-      to: ["contatoglambeleza@gmail.com"],
+      from: `Glambeleza <onboarding@resend.dev>`,
+      to: ["contato@glambeleza.com.br"],
       subject: "Blog - Nova mensagem de contato! 📬",
       react: EmailTemplate({
         name,

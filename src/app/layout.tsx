@@ -1,19 +1,36 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { inter, alike } from "@/src/fonts";
 import { env } from "../env";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.URL_IMAGE),
+
   title: {
     default: "Glambeleza",
     template: "%s | Glambeleza",
   },
-  description: "Glambeleza",
+  description:
+    "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
+
+  keywords: [
+    "Glambeleza",
+    "Glamour",
+    "Saúde",
+    "bem estar",
+    "beleza",
+    "pele",
+    "cuidados",
+    "corpo",
+    "maquiagem",
+    "cabelo",
+    "emagrecimento",
+    "moda",
+  ],
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -23,35 +40,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" className={inter.className}>
-      <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6f233f" />
-        <meta name="msapplication-TileColor" content="#6f233f" />
-        <meta name="theme-color" content="#6f233f" />
-
-        <meta property="og:image" content="<generated>" />
-        <meta property="og:image:alt" content="Glambeleza" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-      </Head>
       <body>
         <Header />
         <main
