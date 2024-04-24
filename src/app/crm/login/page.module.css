@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  max-width: 450px;
+  letter-spacing: 0.8px;
+}
+
+.spiner {
+  animation: rotateAnimation 1s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

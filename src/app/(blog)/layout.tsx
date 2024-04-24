@@ -1,7 +1,10 @@
-import "./globals.css";
+/* eslint-disable @next/next/no-page-custom-font */
+import "@/src/app/globals.css";
 import { Metadata } from "next";
-import { inter } from "@/src/fonts";
-import { env } from "../env";
+import Header from "@/src/components/header";
+import Footer from "@/src/components/footer";
+import { inter, alike } from "@/src/fonts";
+import { env } from "@/src/env";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.URL_IMAGE),
@@ -37,7 +40,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" className={inter.className}>
-      {children}
+      <body>
+        <Header />
+        <main
+          style={{
+            maxWidth: "var(--max-width)",
+            margin: "0 auto",
+          }}
+        >
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

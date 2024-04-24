@@ -20,7 +20,7 @@ async function getPost(slug: string): Promise<PostProps> {
     },
   });
   const data = await response.json();
-  return data.post;
+  return data?.post;
 }
 
 export async function generateMetadata({
@@ -41,38 +41,38 @@ export default async function BlogPage({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const data = await getPost(slug);
+  const post = await getPost(slug);
 
   return (
     <div className={styles.container}>
-      <div className={styles.tag}>{data?.tag}</div>
-      <h1 className={styles.titulo}>{data?.title}</h1>
+      <div className={styles.tag}>{post?.tag}</div>
+      <h1 className={styles.titulo}>{post?.title}</h1>
       <div className={styles?.autor}>
         <div className={styles?.avatar}>
           <Image
-            src={data?.author?.avatar}
-            alt={data?.author?.name}
+            src={post?.author?.avatar}
+            alt={post?.author?.name}
             width={50}
             height={50}
             quality={100}
           />
         </div>
-        <div className={styles.nome}>{data?.author?.name}</div>
+        <div className={styles.nome}>{post?.author?.name}</div>
       </div>
-      <div className={styles.date}>{moment(data?.created_at).format("LL")}</div>
+      <div className={styles.date}>{moment(post?.created_at).format("LL")}</div>
       <div className={styles.contImg}>
         <Image
-          src={data?.image || "/opengraph-image.png"}
-          alt={data?.title}
+          src={post?.image || "/opengraph-image.png"}
+          alt={post?.title}
           width={980}
           height={400}
           quality={100}
           priority
         />
       </div>
-      <p className={styles.resumo}>{data?.summary}</p>
+      <p className={styles.resumo}>{post?.summary}</p>
 
-      {data?.paragraphs?.map((paragraph, index) => (
+      {post?.paragraphs?.map((paragraph, index) => (
         <div key={index}>
           {paragraph.affiliates && (
             <div>

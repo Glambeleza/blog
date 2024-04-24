@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from "./form.module.css";
 import { RiMailSendLine } from "react-icons/ri";
-import { CgSpinnerTwo } from "react-icons/cg";
+import { ImSpinner9 } from "react-icons/im";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import zod from "zod";
@@ -25,8 +25,6 @@ const formValidationSchema = zod.object({
 export type FormProps = zod.infer<typeof formValidationSchema>;
 
 export function Form() {
-  const [loading, setLoading] = useState(false);
-
   const { register, handleSubmit, formState, reset } = useForm<FormProps>({
     resolver: zodResolver(formValidationSchema),
     defaultValues: {
@@ -35,11 +33,10 @@ export function Form() {
       message: "",
     },
   });
-  const { errors } = formState;
+  const { errors, isSubmitting } = formState;
 
   const handleForm = async (props: FormProps) => {
     try {
-      setLoading(true);
       const response = await fetch(`${env.NEXT_PUBLIC_URL_IMAGE}/email/send`, {
         method: "POST",
         headers: {
@@ -49,7 +46,6 @@ export function Form() {
         cache: "no-cache",
       });
       const data = await response.json();
-      setLoading(false);
       if (data.error) {
         console.error(data.error);
         return toast.error(
@@ -80,7 +76,6 @@ export function Form() {
       });
     } catch (error) {
       console.error(error);
-      setLoading(false);
       return toast.error(
         "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
         {
@@ -138,10 +133,10 @@ export function Form() {
           <p className={styles.error}>{errors.message.message}</p>
         )}
 
-        <button type="submit" className={styles.button} disabled={loading}>
+        <button type="submit" className={styles.button} disabled={isSubmitting}>
           Enviar{" "}
-          {loading ? (
-            <CgSpinnerTwo className={styles.spiner} />
+          {isSubmitting ? (
+            <ImSpinner9 className={styles.spiner} />
           ) : (
             <RiMailSendLine />
           )}
