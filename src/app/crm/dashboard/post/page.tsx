@@ -11,8 +11,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import moment from "moment";
-import { Button } from "@/components/ui/button";
-import { AddPost } from "./components/addPost";
+import { AddPost } from "./components/addPost/addPost";
+import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
+import ActivPost from "./components/activePost";
+import DeactivatePost from "./components/deactivatePost";
 
 async function getPosts(page?: number): Promise<PostProps[]> {
   const response = await api("/posts", {
@@ -61,9 +63,9 @@ export default async function Posts() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((item) => (
+          {data?.map((item) => (
             <TableRow key={item?.id}>
-              <TableCell>{item?.id}</TableCell>
+              <TableCell className={styles.textHidden}>{item?.id}</TableCell>
               <TableCell>{item?.title}</TableCell>
               <TableCell>{moment(item?.created_at).format("LL")}</TableCell>
               <TableCell>{item?.author?.name}</TableCell>
@@ -75,8 +77,22 @@ export default async function Posts() {
                 )}
               </TableCell>
               <TableCell className="text-right">
-                <Button>Editar</Button>
-                <Button>Deletar</Button>
+                <ul className={styles.icons}>
+                  <li className={styles.icon}>
+                    <AiOutlineEye />
+                  </li>
+                  <li className={styles.icon}>
+                    <AiOutlineEdit />
+                  </li>
+
+                  <li className={styles.icon}>
+                    {item?.published ? (
+                      <DeactivatePost id={item?.id} />
+                    ) : (
+                      <ActivPost id={item?.id} />
+                    )}
+                  </li>
+                </ul>
               </TableCell>
             </TableRow>
           ))}

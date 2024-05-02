@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./index.module.css";
 import { useForm } from "react-hook-form";
 import zod from "zod";
@@ -27,35 +27,41 @@ export default function FormLogin() {
   const { errors, isSubmitting } = formState;
   const router = useRouter();
 
-  async function handleForm(props: FormProps): Promise<void> {
-    const response = await api("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-cache",
-      body: JSON.stringify(props),
-    });
-
-    const json = await response.json();
-    const token = json?.token;
-
-    if (!token) {
-      toast.error(json.message, {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }
+  useEffect(() => {
+    const token = window.localStorage.getItem("@GlambelezaToken");
 
     if (token) {
-      localStorage.setItem("@GlambelezaToken", token);
       router.push("/crm/dashboard/post");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function handleForm(props: FormProps): Promise<void> {
+    try {
+      const response = await api("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-cache",
+        body: JSON.stringify(props),
+      });
+
+      const json = await response.json();
+      const token = json?.token;
+
+      console.log(json);
+
+      if (!token) {
+        toast.error(json.message);
+      }
+
+      if (token) {
+        localStorage.setItem("@GlambelezaToken", token);
+        router.push("/crm/dashboard/post");
+      }
+    } catch (error: any) {
+      toast.error(error?.message);
     }
   }
 

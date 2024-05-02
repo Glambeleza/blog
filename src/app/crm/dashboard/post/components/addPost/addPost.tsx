@@ -58,6 +58,7 @@ export function AddPost() {
   const handleSubmitForm = async (formValues: FormProps) => {
     try {
       const token = localStorage.getItem("@GlambelezaToken");
+
       const dataValuesForm = {
         ...formValues,
         slug: createSlug(formValues?.title),
