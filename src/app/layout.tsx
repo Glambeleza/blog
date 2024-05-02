@@ -1,4 +1,5 @@
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Metadata } from "next";
 import { inter } from "@/src/fonts";
 import { env } from "../env";
@@ -37,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" className={inter.className}>
-      {children}
+      <body>{children}</body>
     </html>
   );
 }

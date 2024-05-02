@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  margin-top: 1rem;
+  width: 300px;
+  border: none;
+  outline: none;
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 0.3rem;
+  border: none;
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-hover);
+}
+.error {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  max-width: 450px;
+  letter-spacing: 0.8px;
+}
+
+.spiner {
+  animation: rotateAnimation 1s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

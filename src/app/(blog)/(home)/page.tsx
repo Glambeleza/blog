@@ -25,7 +25,10 @@ async function getPosts(page?: number): Promise<PostProps[]> {
     },
   });
   const data = await response?.json();
-  return data?.posts;
+  const activePosts = data?.posts?.filter(
+    (post: PostProps) => post.published === true
+  );
+  return activePosts;
 }
 
 export async function generateStaticParams() {

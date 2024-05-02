@@ -1,28 +1,27 @@
 .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+}
+
+.image {
+  background-image: url("/background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.containerForm {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  max-width: 450px;
-  letter-spacing: 0.8px;
-}
-
-.spiner {
-  animation: rotateAnimation 1s linear infinite;
-}
-
-@keyframes rotateAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.title {
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: #aaa;
 }

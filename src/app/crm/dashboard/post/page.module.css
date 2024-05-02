@@ -1,0 +1,13 @@
+.container {
+}
+
+.contTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}

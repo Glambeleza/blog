@@ -5,6 +5,7 @@ import Header from "@/src/components/header";
 import Footer from "@/src/components/footer";
 import { inter, alike } from "@/src/fonts";
 import { env } from "@/src/env";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.URL_IMAGE),
@@ -39,19 +40,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt" className={inter.className}>
-      <body>
-        <Header />
-        <main
-          style={{
-            maxWidth: "var(--max-width)",
-            margin: "0 auto",
-          }}
-        >
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header />
+      <main
+        style={{
+          maxWidth: "var(--max-width)",
+          margin: "0 auto",
+        }}
+      >
+        {children}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+      </main>
+      <Footer />
+    </>
   );
 }

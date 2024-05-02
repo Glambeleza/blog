@@ -7,8 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import zod from "zod";
 import { env } from "@/src/env";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const formValidationSchema = zod.object({
   name: zod.string().min(3, {
@@ -146,19 +145,6 @@ export function Form() {
         Se preferir envie um email para{" "}
         <span className={styles.email}>contato@glambeleza.com.br</span>
       </p>
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </>
   );
 }
