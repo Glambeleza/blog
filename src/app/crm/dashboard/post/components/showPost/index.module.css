@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.tag {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.date {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.contImg img {
+  width: 980px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.resumo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  line-height: 1.5;
+  text-indent: 20px;
+}
+
+.paragrafo {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: justify;
+  line-height: 1.5;
+  text-indent: 20px;
+}
+
+.autor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.nome {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.voltar {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 20px;
+    min-height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .tag {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .titulo {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .contImg img {
+    width: 100vw;
+    height: 200px;
+    border-radius: 0;
+  }
+
+  .resumo {
+    font-size: 1rem;
+  }
+
+  .paragrafo {
+    /* padding: 20px; */
+    font-size: 1rem;
+  }
+
+  .voltar {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .autor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .avatar img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .nome {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+}

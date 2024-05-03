@@ -15,6 +15,7 @@ import { AddPost } from "./components/addPost/addPost";
 import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 import ActivPost from "./components/activePost";
 import DeactivatePost from "./components/deactivatePost";
+import { ShowPost } from "./components/showPost";
 
 async function getPosts(page?: number): Promise<PostProps[]> {
   const response = await api("/posts", {
@@ -79,7 +80,7 @@ export default async function Posts() {
               <TableCell className="text-right">
                 <ul className={styles.icons}>
                   <li className={styles.icon}>
-                    <AiOutlineEye />
+                    <ShowPost {...item} />
                   </li>
                   <li className={styles.icon}>
                     <AiOutlineEdit />
