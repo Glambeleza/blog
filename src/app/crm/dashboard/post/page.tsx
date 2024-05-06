@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/table";
 import moment from "moment";
 import { AddPost } from "./components/addPost/addPost";
-import { AiOutlineEdit, AiOutlineEye } from "react-icons/ai";
 import ActivPost from "./components/activePost";
 import DeactivatePost from "./components/deactivatePost";
 import { ShowPost } from "./components/showPost";
@@ -48,7 +47,7 @@ export default async function Posts() {
   return (
     <div className={styles.container}>
       <div className={styles.contTitle}>
-        <h2 className={styles.title}>Page post test</h2>
+        <h2 className={styles.title}>Posts</h2>
         <AddPost />
       </div>
 
@@ -81,9 +80,6 @@ export default async function Posts() {
                 <ul className={styles.icons}>
                   <li className={styles.icon}>
                     <ShowPost {...item} />
-                  </li>
-                  <li className={styles.icon}>
-                    <AiOutlineEdit />
                   </li>
 
                   <li className={styles.icon}>

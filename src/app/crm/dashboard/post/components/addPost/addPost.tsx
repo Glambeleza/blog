@@ -7,6 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 import styles from "./addPost.module.css";
@@ -16,6 +17,7 @@ import { api } from "@/src/data/api";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
+import { AiOutlineSave } from "react-icons/ai";
 
 const formValidationSchema = zod.object({
   title: zod.string().min(3, {
@@ -79,17 +81,7 @@ export function AddPost() {
       if (data.error) {
         console.log(data.error);
         return toast.error(
-          "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
-          {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          }
+          "Algo deu errado! Por favor, tente novamente mais tarde. 😁"
         );
       }
 
@@ -167,7 +159,12 @@ export function AddPost() {
 
           <DialogFooter>
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "...loading" : "Save changes"}
+              <AiOutlineSave
+                style={{
+                  fontSize: "2rem",
+                  cursor: "pointer",
+                }}
+              />
             </Button>
           </DialogFooter>
         </form>

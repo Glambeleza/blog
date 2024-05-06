@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
 import Image from "next/image";
-import { alike } from "@/src/fonts";
 
 import { AffiliateLinkProps } from "@/src/data/types/post";
 import Link from "next/link";
@@ -22,7 +21,7 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
               item && (
                 <li key={item.href}>
                   <Link href={item.href} target="_blank" title={"mesmolugar"}>
-                    <h2 className={alike.className}>{item?.title}</h2>
+                    <h2 className={styles.title}>{item?.title}</h2>
                     <br />
                     <Image
                       src={item.image}

@@ -21,6 +21,7 @@ export interface AffiliateLinkProps {
 }
 
 export interface ParagraphProps {
+  id: string;
   text: string;
   image?: string;
   affiliates?: AffiliateLinkProps[];

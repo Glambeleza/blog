@@ -1,17 +1,22 @@
+"use client";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import React from "react";
 import styles from "./index.module.css";
-import { AiOutlineEye } from "react-icons/ai";
 import { PostProps } from "@/src/data/types/post";
 import Image from "next/image";
 import moment from "moment";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { AiOutlineEye, AiOutlineSave, AiOutlinePlus } from "react-icons/ai";
+import { AddParagraph } from "./components/addParagraph";
+import { AffiliateLink } from "@/src/app/(blog)/post/[slug]/components/linkProduto";
+import { AddAffiliate } from "./components/addAffiliate";
 
 export const ShowPost: React.FC<PostProps> = (post) => {
   return (
@@ -57,13 +62,24 @@ export const ShowPost: React.FC<PostProps> = (post) => {
 
             {post?.paragraphs?.map((paragraph, index) => (
               <div key={index}>
-                {paragraph.affiliates && (
+                <p className={styles.paragrafo}>{paragraph.text}</p>
+
+                {paragraph?.affiliates && (
                   <div>
-                    {/* <AffiliateLink affiliates={paragraph?.affiliates} /> */}
+                    <AffiliateLink affiliates={paragraph?.affiliates} />
                   </div>
                 )}
 
-                <p className={styles.paragrafo}>{paragraph.text}</p>
+                {!paragraph?.affiliates?.length && (
+                  <div
+                    style={{
+                      width: "100%",
+                      textAlign: "right",
+                    }}
+                  >
+                    <AddAffiliate paragraph_id={paragraph.id} />
+                  </div>
+                )}
                 {paragraph.image && (
                   <Image
                     src={paragraph.image}
@@ -77,6 +93,11 @@ export const ShowPost: React.FC<PostProps> = (post) => {
             ))}
           </div>
         </ScrollArea>
+        <DialogFooter>
+          <div className={styles.icons}>
+            <AddParagraph post_id={post?.id} />
+          </div>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
