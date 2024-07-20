@@ -29,7 +29,7 @@ export default function Header() {
 
       <h1 className={styles.logo}>
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           alt="Glambeleza"
           width={200}
           height={200}

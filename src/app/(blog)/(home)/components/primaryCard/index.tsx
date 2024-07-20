@@ -12,7 +12,7 @@ export default async function PrimaryCard(post: PostProps) {
         <div className={styles.cont}>
           <div className={styles.firstContImg}>
             <Image
-              src={post?.image || "/logo.png"}
+              src={post?.image || "/logo-dark.svg"}
               alt={"Imagem principal do conteúdo sobre " + post?.title}
               width={500}
               height={500}

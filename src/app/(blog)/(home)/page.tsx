@@ -13,26 +13,27 @@ export const metadata: Metadata = {
     "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
 };
 
-async function getPosts(page?: number): Promise<PostProps[]> {
-  const response = await api("/posts", {
-    method: "POST",
+async function getPosts(page: number): Promise<PostProps[]> {
+
+  const response = await api(`/posts-activeted?page=${page}`, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ page }),
+
     next: {
       revalidate: 60 * 60 * 1, // 1 hours
     },
   });
+
   const data = await response?.json();
-  const activePosts = data?.posts?.filter(
-    (post: PostProps) => post.published === true
-  );
-  return activePosts;
+
+  return data.posts;
 }
 
 export async function generateStaticParams() {
-  const posts = await getPosts();
+  const page = 1;
+  const posts = await getPosts(page);
   const firstAndSecondeItem = posts?.filter((_, index) => index < 2);
   return firstAndSecondeItem?.map((post) => ({
     params: { slug: post.id },
@@ -42,6 +43,7 @@ export async function generateStaticParams() {
 export default async function Home() {
   const page = 1;
   const data = await getPosts(page);
+
   const firstAndSecondeItem = data?.filter((_, index) => index < 2);
   const restOfItems = data?.filter((_, index) => index > 1);
 
