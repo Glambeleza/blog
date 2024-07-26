@@ -11,23 +11,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "*.unsplash.com",
-      },
-
-      {
-        protocol: "https",
-        hostname: "github.com",
-      },
-
-      {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "*", // Permite qualquer hostname com http
       },
-
       {
         protocol: "https",
-        hostname: "m.media-amazon.com",
+        hostname: "*", // Permite qualquer hostname com https
       },
     ],
   },
