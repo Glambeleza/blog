@@ -46,7 +46,6 @@ export function Form() {
       });
       const data = await response.json();
       if (data.error) {
-        console.error(data.error);
         return toast.error(
           "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
           {
@@ -74,7 +73,6 @@ export function Form() {
         theme: "colored",
       });
     } catch (error) {
-      console.error(error);
       return toast.error(
         "Algo deu errado! Por favor, tente novamente mais tarde. 😁",
         {

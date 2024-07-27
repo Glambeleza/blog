@@ -20,7 +20,7 @@ interface AbautPageProps {
   }
 }
 
-async function getPosts(page: string): Promise<PostProps[]> {
+async function getPosts(page: string): Promise<{ posts: PostProps[], currentPage: number, totalItens: number }> {
   const response = await api(`/posts-activeted?page=${page}`, {
     method: "GET",
     headers: {
@@ -33,12 +33,12 @@ async function getPosts(page: string): Promise<PostProps[]> {
   });
 
   const data = await response?.json();
-  return data.posts;
+  return data;
 }
 
 export async function generateStaticParams() {
-  const posts = await getPosts("1");
-  const firstAndSecondeItem = posts?.filter((_, index) => index < 2);
+  const data = await getPosts("1");
+  const firstAndSecondeItem = data?.posts?.filter((_, index) => index < 2);
   return firstAndSecondeItem?.map((post) => ({
     params: { slug: post.id, },
   }));
@@ -49,11 +49,12 @@ export default async function Home({ searchParams }: AbautPageProps) {
   const page = searchParams.page || "1";
   const data = await getPosts(page);
 
-  const firstAndSecondeItem = data?.filter((_, index) => index < 2);
-  const restOfItems = data?.filter((_, index) => index > 1);
+  const firstAndSecondeItem = data?.posts?.filter((_, index) => index < 2);
+  const restOfItems = data?.posts?.filter((_, index) => index > 1);
 
   return (
     <main className={styles.main}>
+
       <ul className={styles.firstList}>
         {firstAndSecondeItem?.map((post) => (
           <li key={post.id}>
@@ -61,6 +62,7 @@ export default async function Home({ searchParams }: AbautPageProps) {
           </li>
         ))}
       </ul>
+
       <ul className={styles.secondList}>
         {restOfItems?.map((post) => (
           <li key={post.id}>
@@ -68,8 +70,9 @@ export default async function Home({ searchParams }: AbautPageProps) {
           </li>
         ))}
       </ul>
-      <div>
-        <AppPagination current={Number(page)} total={50} />
+
+      <div className={styles.pagination}>
+        <AppPagination current={Number(page)} total={data.totalItens} />
       </div>
 
     </main>

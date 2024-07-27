@@ -22,7 +22,6 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                 <li key={item.href}>
                   <Link href={item.href} target="_blank" title={"mesmolugar"}>
                     <h2 className={styles.title}>{item?.title}</h2>
-                    <br />
                     <Image
                       src={item.image}
                       alt={"Imagem principal do conteúdo"}

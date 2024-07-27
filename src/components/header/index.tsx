@@ -3,6 +3,7 @@ import {
   BiLogoPinterest,
   BiLogoFacebook,
   BiLogoTiktok,
+  BiLogoYoutube,
 } from "react-icons/bi";
 import Link from "next/link";
 import styles from "./index.module.css";
@@ -40,6 +41,7 @@ export default function Header() {
 
       <nav className={styles.nav}>
         <ul className={styles.listSocial}>
+
           <li className={styles.itemSocial}>
             <Link
               href={"https://www.instagram.com/glambeleza_oficial/"}
@@ -49,6 +51,7 @@ export default function Header() {
               <BiLogoInstagramAlt />
             </Link>
           </li>
+
           <li className={styles.itemSocial}>
             <Link
               href={"https://www.tiktok.com/@glambeleza"}
@@ -67,6 +70,17 @@ export default function Header() {
               <BiLogoFacebook />
             </Link>
           </li>
+
+          <li className={styles.itemSocial}>
+            <Link
+              href={"https://www.youtube.com/@glambeleza-q9j"}
+              target="_blank"
+              title="You tube"
+            >
+              <BiLogoYoutube />
+            </Link>
+          </li>
+
           <li className={styles.itemSocial}>
             <Link
               href={"https://br.pinterest.com/glambeleza/"}

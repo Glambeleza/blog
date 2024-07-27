@@ -5,6 +5,7 @@ import {
   BiLogoTiktok,
   BiLogoFacebook,
   BiLogoPinterest,
+  BiLogoYoutube,
 } from "react-icons/bi";
 
 export default function Social() {
@@ -54,6 +55,18 @@ export default function Social() {
                 <BiLogoFacebook />
               </div>{" "}
               <p className={styles.socialName}>facebook.com/glambeleza</p>
+            </Link>
+          </li>
+          <li className={styles.item}>
+            <Link
+              href={"https://www.youtube.com/@glambeleza-q9j"}
+              target="_blank"
+              title="You tube"
+            >
+              <div className={styles.icon}>
+                <BiLogoYoutube />
+              </div>{" "}
+              <p className={styles.socialName}>youtube.com/@glambeleza-q9j</p>
             </Link>
           </li>
           <li className={styles.item}>

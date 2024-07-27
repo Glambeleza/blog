@@ -8,6 +8,8 @@ import { AffiliateLink } from "./components/linkProduto";
 import { BiArrowBack } from "react-icons/bi";
 import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from "antd";
 
 async function getPost(slug: string): Promise<PostProps> {
   const response = await api(`/post/${slug}`, {
@@ -16,7 +18,7 @@ async function getPost(slug: string): Promise<PostProps> {
       "Content-Type": "application/json",
     },
     next: {
-      revalidate: 60 * 60 * 1, // 1 hours
+      revalidate: 60 * 60 * 24 * 7, // 7 days
     },
   });
   const data = await response.json();
@@ -43,19 +45,24 @@ export default async function BlogPage({
   const { slug } = params;
   const post = await getPost(slug);
 
+
   return (
     <div className={styles.container}>
       <div className={styles.tag}>{post?.tag}</div>
       <h1 className={styles.titulo}>{post?.title}</h1>
       <div className={styles?.autor}>
         <div className={styles?.avatar}>
-          <Image
-            src={post?.author?.avatar}
-            alt={post?.author?.name}
-            width={50}
-            height={50}
-            quality={100}
-          />
+          {(post.author.avatar && post.author.avatar !== "")
+            ? <Image
+              src={post?.author?.avatar}
+              alt={post?.author?.name}
+              width={50}
+              height={50}
+              quality={100}
+              priority
+            />
+            : <Avatar size={50} icon={<UserOutlined />} />
+          }
         </div>
         <div className={styles.nome}>{post?.author?.name}</div>
       </div>
@@ -73,7 +80,7 @@ export default async function BlogPage({
       <p className={styles.resumo}>{post?.summary}</p>
 
       {post?.paragraphs?.map((paragraph, index) => (
-        <div key={index}>
+        <div key={index} style={{ padding: 0 }}>
           {paragraph.affiliates && (
             <div>
               <AffiliateLink affiliates={paragraph?.affiliates} />
@@ -81,7 +88,8 @@ export default async function BlogPage({
           )}
 
           <p className={styles.paragrafo}>{paragraph.text}</p>
-          {paragraph.image && (
+
+          {/* {paragraph.image && (
             <Image
               src={paragraph.image}
               alt={"Imagem mostrando produto"}
@@ -89,13 +97,13 @@ export default async function BlogPage({
               height={300}
               quality={100}
             />
-          )}
+          )} */}
         </div>
       ))}
 
-      <Link href="/" className={styles.voltar} title="Voltar">
+      {/* <Link href="/" className={styles.voltar} title="Voltar">
         <BiArrowBack /> Voltar
-      </Link>
+      </Link> */}
     </div>
   );
 }

@@ -4,6 +4,8 @@ import Image from "next/image";
 import moment from "moment";
 import { PostProps } from "@/src/data/types/post";
 import MarkText from "../../components/markText";
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from "antd";
 
 export default async function SecondaryCard(post: PostProps) {
   return (
@@ -27,14 +29,20 @@ export default async function SecondaryCard(post: PostProps) {
             <div className={styles.autorDate}>
               <div className={styles.autor}>
                 <div className={styles.avatar}>
-                  <Image
-                    src={post?.author?.avatar}
-                    alt={post?.author?.name}
-                    width={25}
-                    height={25}
-                    quality={100}
-                  />
+
+                  {(post.author.avatar && post.author.avatar !== "")
+                    ? <Image
+                      src={post?.author?.avatar}
+                      alt={post?.author?.name}
+                      width={25}
+                      height={25}
+                      quality={100}
+                      priority
+                    />
+                    : <Avatar size={25} icon={<UserOutlined />} />
+                  }
                 </div>
+
                 <div className={styles.nome}>{post?.author?.name}</div>
               </div>
               <p className={styles.date}>

@@ -38,6 +38,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" className={inter.className}>
+      <head>
+        <link rel="icon" href="/logo-dark.ico" />
+      </head>
       <body>{children}</body>
     </html>
   );

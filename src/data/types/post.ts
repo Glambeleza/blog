@@ -38,4 +38,5 @@ export interface PostProps {
   image: string;
   summary: string;
   author: AuthorProps;
+  paragraphs: ParagraphProps[];
 }

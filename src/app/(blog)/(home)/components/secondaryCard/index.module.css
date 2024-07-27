@@ -42,6 +42,7 @@
   max-width: 490px;
   margin-bottom: 20px;
   height: 100%;
+  min-width: 100%;
 }
 
 .tag {
@@ -77,7 +78,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  margin-right: 1rem;
+  
 }
 
 .nome {
@@ -85,6 +86,7 @@
   font-size: 12px;
   color: #555;
   letter-spacing: 0.5px;
+  margin-left: 1rem;
 }
 
 .date {
