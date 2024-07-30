@@ -6,6 +6,7 @@ import { PostProps } from "@/src/data/types/post";
 import MarkText from "../../components/markText";
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from "antd";
+import { env } from "process";
 
 export default async function SecondaryCard(post: PostProps) {
   return (
@@ -32,7 +33,7 @@ export default async function SecondaryCard(post: PostProps) {
 
                   {(post.author.avatar && post.author.avatar !== "")
                     ? <Image
-                      src={post?.author?.avatar}
+                      src={`${env.CDN_URL}/${post?.author?.avatar}`}
                       alt={post?.author?.name}
                       width={25}
                       height={25}

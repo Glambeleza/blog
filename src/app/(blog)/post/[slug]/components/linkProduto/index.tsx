@@ -20,8 +20,8 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
             return (
               item && (
                 <li key={item.href}>
+                  <h2 className={styles.title}>{item?.title}</h2>
                   <Link href={item.href} target="_blank" title={"mesmolugar"}>
-                    <h2 className={styles.title}>{item?.title}</h2>
                     <Image
                       src={item.image}
                       alt={"Imagem principal do conteúdo"}
@@ -29,7 +29,6 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                       height={300}
                       quality={100}
                     />
-
                     <button className={styles.btnComprar}>
                       Comprar produto
                     </button>

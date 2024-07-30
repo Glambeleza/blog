@@ -10,6 +10,7 @@ import { api } from "@/src/data/api";
 import { PostProps } from "@/src/data/types/post";
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from "antd";
+import { env } from "@/src/env";
 
 async function getPost(slug: string): Promise<PostProps> {
   const response = await api(`/post/${slug}`, {
@@ -54,7 +55,7 @@ export default async function BlogPage({
         <div className={styles?.avatar}>
           {(post.author.avatar && post.author.avatar !== "")
             ? <Image
-              src={post?.author?.avatar}
+              src={`${env.CDN_URL}/${post?.author?.avatar}`}
               alt={post?.author?.name}
               width={50}
               height={50}

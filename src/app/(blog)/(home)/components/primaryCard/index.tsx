@@ -6,6 +6,7 @@ import type { PostProps } from "@/src/data/types/post";
 import MarkText from "../../components/markText";
 import { Avatar } from "antd";
 import { UserOutlined } from '@ant-design/icons';
+import { env } from "@/src/env";
 
 export default async function PrimaryCard(post: PostProps) {
   return (
@@ -33,7 +34,7 @@ export default async function PrimaryCard(post: PostProps) {
                 <div className={styles.avatar}>
                   {(post.author.avatar && post.author.avatar !== "")
                     ? <Image
-                      src={post?.author?.avatar}
+                      src={`${env.CDN_URL}/${post?.author?.avatar}`}
                       alt={post?.author?.name}
                       width={25}
                       height={25}

@@ -36,7 +36,7 @@ export function Form() {
 
   const handleForm = async (props: FormProps) => {
     try {
-      const response = await fetch(`${env.NEXT_PUBLIC_URL_IMAGE}/email/send`, {
+      const response = await fetch(`${env.NEXT_PUBLIC_URL_EMAIL}/email/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
