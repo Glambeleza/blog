@@ -22,12 +22,13 @@ export const AffiliateLink: React.FC<AmazonAffiliateLinkProps> = ({
                 <li key={item.href}>
                   <h2 className={styles.title}>{item?.title}</h2>
                   <Link href={item.href} target="_blank" title={"mesmolugar"}>
-                    <Image
-                      src={item.image}
-                      alt={"Imagem principal do conteúdo"}
-                      width={300}
-                      height={300}
-                      quality={100}
+                    <div className={styles.testImg}
+                      style={{
+                        backgroundImage: `url(${item.image})`,
+                        backgroundSize: "contain",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     />
                     <button className={styles.btnComprar}>
                       Comprar produto

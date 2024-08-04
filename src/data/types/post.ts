@@ -25,6 +25,7 @@ export interface ParagraphProps {
   text: string;
   image?: string;
   affiliates?: AffiliateLinkProps[];
+  subtitle?: string;
 }
 
 export interface PostProps {

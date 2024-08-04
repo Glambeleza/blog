@@ -81,24 +81,17 @@ export default async function BlogPage({
       <p className={styles.resumo}>{post?.summary}</p>
 
       {post?.paragraphs?.map((paragraph, index) => (
-        <div key={index} style={{ padding: 0 }}>
+        <div key={index} style={{ padding: 0, width: "100%" }}>
           {paragraph.affiliates && (
             <div>
               <AffiliateLink affiliates={paragraph?.affiliates} />
             </div>
           )}
 
-          <p className={styles.paragrafo}>{paragraph.text}</p>
-
-          {/* {paragraph.image && (
-            <Image
-              src={paragraph.image}
-              alt={"Imagem mostrando produto"}
-              width={300}
-              height={300}
-              quality={100}
-            />
-          )} */}
+          <h3 className={styles.subTitle}>{paragraph.subtitle}</h3>
+          {paragraph.text.split('\n').map((line, index) => (
+            <p key={index} dangerouslySetInnerHTML={{ __html: line.replace(/#(.*?)#/g, '<span style="color: #fa6e77; font-weight: bold;">$1</span>') }} className={styles.paragrafo} />
+          ))}
         </div>
       ))}
 
