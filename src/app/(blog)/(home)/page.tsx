@@ -9,7 +9,7 @@ import React from "react";
 import { AppPagination } from "./components/pagination";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Glambeleza | Home",
   description:
     "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
 };
@@ -28,7 +28,7 @@ async function getPosts(page: string): Promise<{ posts: PostProps[], currentPage
     },
 
     next: {
-      revalidate: 60 * 60 * 2, // 2 hours
+      revalidate: 60 * 60 * 1 // 1h,
     },
   });
 

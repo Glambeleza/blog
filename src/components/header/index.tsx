@@ -15,16 +15,16 @@ export default function Header() {
     <header className={styles.containerHeader}>
       <nav className={styles.nav}>
         <ul className={`${styles.list}`}>
-          <li className={`${styles.item} ${inter.className}`}>
-            <Link href={"/"} title="Início">
+          <Link href={"/"} title="Início">
+            <li className={`${styles.item} ${inter.className}`}>
               Início
-            </Link>
-          </li>
-          <li className={`${styles.item} ${inter.className}`}>
-            <Link href={"/contact"} title="Contato">
+            </li>
+          </Link>
+          <Link href={"/contact"} title="Contato">
+            <li className={`${styles.item} ${inter.className}`}>
               Contato
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       </nav>
 
@@ -42,54 +42,54 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={styles.listSocial}>
 
-          <li className={styles.itemSocial}>
-            <Link
-              href={"https://www.instagram.com/glambeleza_oficial/"}
-              target="_blank"
-              title="Instagram"
-            >
+          <Link
+            href={"https://www.instagram.com/glambeleza_oficial/"}
+            target="_blank"
+            title="Instagram"
+          >
+            <li className={styles.itemSocial}>
               <BiLogoInstagramAlt />
-            </Link>
-          </li>
+            </li>
+          </Link>
 
-          <li className={styles.itemSocial}>
-            <Link
-              href={"https://www.tiktok.com/@glambeleza"}
-              target="_blank"
-              title="Tiktok"
-            >
+          <Link
+            href={"https://www.tiktok.com/@glambeleza"}
+            target="_blank"
+            title="Tiktok"
+          >
+            <li className={styles.itemSocial}>
               <BiLogoTiktok />
-            </Link>
-          </li>
-          <li className={styles.itemSocial}>
-            <Link
-              href={"https://www.facebook.com/profile.php?id=61553818143882"}
-              target="_blank"
-              title="Facebook"
-            >
+            </li>
+          </Link>
+          <Link
+            href={"https://www.facebook.com/profile.php?id=61553818143882"}
+            target="_blank"
+            title="Facebook"
+          >
+            <li className={styles.itemSocial}>
               <BiLogoFacebook />
-            </Link>
-          </li>
+            </li>
+          </Link>
 
-          <li className={styles.itemSocial}>
-            <Link
-              href={"https://www.youtube.com/@glambeleza-q9j"}
-              target="_blank"
-              title="You tube"
-            >
+          <Link
+            href={"https://www.youtube.com/@glambeleza-q9j"}
+            target="_blank"
+            title="You tube"
+          >
+            <li className={styles.itemSocial}>
               <BiLogoYoutube />
-            </Link>
-          </li>
+            </li>
+          </Link>
 
-          <li className={styles.itemSocial}>
-            <Link
-              href={"https://br.pinterest.com/glambeleza/"}
-              target="_blank"
-              title="Pinterest"
-            >
+          <Link
+            href={"https://br.pinterest.com/glambeleza/"}
+            target="_blank"
+            title="Pinterest"
+          >
+            <li className={styles.itemSocial}>
               <BiLogoPinterest />
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       </nav>
     </header>

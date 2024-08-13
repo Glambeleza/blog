@@ -26,11 +26,11 @@
 .item {
   font-size: 18px;
   font-weight: 700;
-  padding: 5px;
+  padding: 10px;
   font-family: var(--font-title);
   letter-spacing: 1px;
   color: var(--color-tertiary);
-  margin-right: 20px;
+  
 }
 
 .item:hover {
@@ -41,14 +41,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+    
 
 }
 
 .itemSocial {
   font-size: 24px;
   color: var(--color-tertiary);
-  margin-left: 15px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .itemSocial:hover {

@@ -9,15 +9,17 @@ import { PostProps } from "@/src/data/types/post";
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from "antd";
 import { env } from "@/src/env";
+import BackToTopButton from "./components/returnTop";
 
 async function getPost(slug: string): Promise<PostProps> {
+
   const response = await api(`/post/${slug}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
     next: {
-      revalidate: 60 * 60 * 24 * 7, // 7 days
+      revalidate: 60 * 60 * 1 // 1h,
     },
   });
   const data = await response.json();
@@ -30,11 +32,40 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const data = await getPost(params.slug);
+
+  if (!data) {
+    return {
+      title: "Post não encontrado",
+      description: "O post solicitado não foi encontrado.",
+    };
+  }
+
   return {
-    title: data?.title,
-    description: data?.summary,
+    title: data?.title || "Glambeleza",
+    description: data?.summary || "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
+
+    openGraph: {
+      title: data?.title || "Glambeleza",
+      description: data?.summary || "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
+      images: [
+        {
+          url: data?.image || "/opengraph-image.png",
+          width: 980,
+          height: 400,
+          alt: data?.title || "Glambeleza",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: data?.title || "Glambeleza",
+      description: data?.summary || "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
+      images: data?.image || "/opengraph-image.png",
+    },
   };
 }
+
 
 export default async function BlogPage({
   params,
@@ -93,9 +124,7 @@ export default async function BlogPage({
         </div>
       ))}
 
-      {/* <Link href="/" className={styles.voltar} title="Voltar">
-        <BiArrowBack /> Voltar
-      </Link> */}
+      <BackToTopButton />
     </div>
   );
 }
