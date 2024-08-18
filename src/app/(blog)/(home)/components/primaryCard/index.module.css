@@ -9,6 +9,7 @@
   justify-content: space-between;
   border-radius: 5px;
   height: 100%;
+  padding: 5px;
 }
 
 .cont {
@@ -22,7 +23,7 @@
 .firstContImg img {
   width: 100%;
   min-width: 472px;
-
+  
   height: 265.5px;
   object-fit: cover;
   border-radius: 10px;
@@ -32,7 +33,7 @@
 .firstContImg img:hover {
   transform: scale(
     1.01
-  ); /* Aumenta a imagem em 10% (1.1 vezes o tamanho original) */
+  );
 }
 
 .info {

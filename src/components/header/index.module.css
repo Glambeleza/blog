@@ -105,5 +105,9 @@
     color: var(--color-tertiary);
     margin-bottom: 20px;
   }
+
+  .item:hover {
+    color: var(--color-tertiary);
+  }
 }
 
