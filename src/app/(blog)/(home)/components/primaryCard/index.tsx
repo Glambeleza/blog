@@ -8,6 +8,8 @@ import { Avatar } from "antd";
 import { UserOutlined } from '@ant-design/icons';
 import { env } from "@/src/env";
 
+import secondImge from '@/public/opengraph-image.png'
+
 export default async function PrimaryCard(post: PostProps) {
   return (
     <div key={post?.id} className={styles.container}>
@@ -15,7 +17,7 @@ export default async function PrimaryCard(post: PostProps) {
         <div className={styles.cont}>
           <div className={styles.firstContImg}>
             <Image
-              src={post?.image || "/logo-dark.svg"}
+              src={post?.image || secondImge}
               alt={"Imagem principal do conteúdo sobre " + post?.title}
               width={500}
               height={500}

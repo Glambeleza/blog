@@ -13,6 +13,7 @@ import { inter } from "@/src/fonts";
 export default function Header() {
   return (
     <header className={styles.containerHeader}>
+
       <nav className={styles.nav}>
         <ul className={`${styles.list}`}>
           <Link href={"/"} title="Início">

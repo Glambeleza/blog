@@ -7,6 +7,7 @@ import MarkText from "../../components/markText";
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from "antd";
 import { env } from "process";
+import secondImage from '@/public/opengraph-image.png'
 
 export default async function SecondaryCard(post: PostProps) {
   return (
