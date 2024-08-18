@@ -5,7 +5,7 @@ import { inter } from "@/src/fonts";
 import { env } from "../env";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(env.URL_IMAGE),
+  // metadataBase: new URL(env.URL_IMAGE),
 
   title: {
     default: "Glambeleza",

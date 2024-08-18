@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    URL_IMAGE: z.string().url(),
+    // URL_IMAGE: z.string().url(),
     CDN_URL: z.string().url(),
     RESEND_API_KEY: z.string().min(1),
     RESEND_API_EMAIL: z.string().email(),
@@ -14,7 +14,7 @@ export const env = createEnv({
   },
   // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
   runtimeEnv: {
-    URL_IMAGE: process.env.URL_IMAGE,
+    // URL_IMAGE: process.env.URL_IMAGE,
     CDN_URL: process.env.CDN_URL,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
