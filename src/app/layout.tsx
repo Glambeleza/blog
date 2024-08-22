@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Glambeleza",
-    template: "%s | Glambeleza",
+    template: "Glambeleza | %s",
   },
   description:
     "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
@@ -37,9 +37,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt" className={inter.className}>
+    <html lang="pt-br" className={inter.className}>
       <head>
-        <link rel="icon" href="/logo-dark.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body>{children}</body>
     </html>

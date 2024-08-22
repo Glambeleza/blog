@@ -35,10 +35,11 @@ export async function generateMetadata({
 
   if (!data) {
     return {
-      title: "Post não encontrado",
-      description: "O post solicitado não foi encontrado.",
+      title: "Infelismente não foi possível localizar o post.",
+      description: "Navegue pelas postagens da Glambeleza que estão repletas de dicas. Com certeza você encontrará o que procura em glambeleza.com.br",
     };
   }
+
 
   return {
     title: data?.title || "Glambeleza",
@@ -47,11 +48,12 @@ export async function generateMetadata({
     openGraph: {
       title: data?.title || "Glambeleza",
       description: data?.summary || "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
+      url: `https://glambeleza.com.br/post/${data?.slug}`,
       images: [
         {
           url: data?.image || "/opengraph-image.png",
-          width: 980,
-          height: 400,
+          width: 1200,
+          height: 630,
           alt: data?.title || "Glambeleza",
         },
       ],
@@ -63,6 +65,7 @@ export async function generateMetadata({
       description: data?.summary || "Navegue pelas postagens da Glambeleza que estão repletas de dicas sobre limpeza de pele, cuidados com o corpo, maquiagem, cuidados com o cabelo, emagrecimento e moda, projetadas para ajudá-lo a expressar sua beleza única e realçar sua confiança. Além disso, desvende mitos e verdades sobre produtos para melhorar a saúde do seu corpo, ingredientes naturais e tendências emergentes para tomar decisões corretas sobre o seu bem-estar.",
       images: data?.image || "/opengraph-image.png",
     },
+    robots: "index, follow",
   };
 }
 
@@ -85,7 +88,7 @@ export default async function BlogPage({
           {(post.author.avatar && post.author.avatar !== "")
             ? <Image
               src={`${env.CDN_URL}/${post?.author?.avatar}`}
-              alt={post?.author?.name}
+              alt={"Imagem do usuário glabeleza," + post?.author?.name}
               width={50}
               height={50}
               quality={100}
@@ -100,7 +103,7 @@ export default async function BlogPage({
       <div className={styles.contImg}>
         <Image
           src={post?.image || "/opengraph-image.png"}
-          alt={post?.title}
+          alt={"Imagem do post glabeleza," + post?.title}
           width={980}
           height={400}
           quality={100}

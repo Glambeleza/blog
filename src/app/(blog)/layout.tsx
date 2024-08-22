@@ -5,6 +5,8 @@ import Footer from "@/src/components/footer";
 
 import { ToastContainer } from "react-toastify";
 
+
+
 export default function RootLayout({
   children,
 }: {
