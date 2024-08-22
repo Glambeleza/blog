@@ -31,7 +31,7 @@ export default function Header() {
       <h1 className={styles.logo}>
         <Image
           src="/logo.svg"
-          alt="Glambeleza"
+          alt="Logo da Glambeleza, um desenho de uma mulher usando um chapéu com traços delicados "
           width={200}
           height={200}
           priority

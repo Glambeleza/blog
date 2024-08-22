@@ -16,7 +16,7 @@ export default async function PrimaryCard(post: PostProps) {
           <div className={styles.firstContImg}>
             <Image
               src={post?.image || "/logo-dark.svg"}
-              alt={"Imagem principal do conteúdo sobre " + post?.title}
+              alt={"Imagem do post glabeleza," + post?.title}
               width={500}
               height={500}
               quality={100}
@@ -35,7 +35,7 @@ export default async function PrimaryCard(post: PostProps) {
                   {(post.author.avatar && post.author.avatar !== "")
                     ? <Image
                       src={`${env.CDN_URL}/${post?.author?.avatar}`}
-                      alt={post?.author?.name}
+                      alt={"Imagem do usuário glabeleza," + post?.author?.name}
                       width={25}
                       height={25}
                       quality={100}

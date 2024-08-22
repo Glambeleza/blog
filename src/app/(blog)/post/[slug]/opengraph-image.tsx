@@ -18,6 +18,7 @@ export const contentType = "image/png";
 async function getPost(slug: string): Promise<PostProps> {
   const response = await api(`/post/${slug}`);
   const data = await response.json();
+
   return data;
 }
 
@@ -42,7 +43,7 @@ export default async function OgImage({
         }}
       >
         <div>
-          <Image src={post.image} alt={post.title} width={1200} height={630} />
+          <Image src={post.image} alt={"Imagem do post glabeleza," + post.title} width={1200} height={630} />
         </div>
       </div>
     ),
